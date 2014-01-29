@@ -1,4 +1,6 @@
 Books::Application.routes.draw do
+  get "welcome/about"
+
   get "welcome/tutors"
 
   get "welcome/privacy"
