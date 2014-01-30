@@ -9,6 +9,13 @@
 
 ## v0.1
 
+* Web interface to Booktitles - 6 RESTFUL action - create, new, edit, show, update, destroy
+* Model and web interface to categories.
+
+
+
+## v0.1
+
 * Create the titles models;
 * Test models in console;
 * Write RSpec specs for models.

@@ -1,4 +1,5 @@
 Books::Application.routes.draw do
+  resources :booktitles
   get "welcome/about"
 
   get "welcome/tutors"
