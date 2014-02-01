@@ -1,4 +1,4 @@
 class Category < ActiveRecord::Base
   attr_accessible :body, :title
-  has_many :booktitles
+  has_many :books
 end

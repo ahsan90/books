@@ -2,15 +2,21 @@
 
 ## v0.0
 
-* Document user stories;
-* Draft the site map and wireframes;
-* Figure out model relationships;
-* Think through controllers/views.
+D! Document user stories; 
+D! Draft the site map and wireframes;
+D! Figure out model relationships;
+D! Think through controllers/views.
 
 ## v0.1
 
-* Web interface to Booktitles - 6 RESTFUL action - create, new, edit, show, update, destroy
-* Model and web interface to categories.
+D! Web interface to Book - 6 RESTFUL action - create, new, edit, show, update, destroy
+* Model and web interface to categories - basically do the same for categories
+* Try - set up the association btwn book and category and something on book form to set category (drop down list) 
+- rails form helper - populate.
+"Method - collections select" - http://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-collection_select
+
+NO. Nesting - topic and post - e.g. view a category to create a new post.
+
 
 
 

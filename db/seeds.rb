@@ -6,4 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Booktitle.create()
+t = Book.new
+t.title = "Reasoning"
+t.body = "ABCDEFG"
+t.atar = 99.9
+t.price = 12.99
+t.save

@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20140130020056) do
 
-  create_table "booktitles", :force => true do |t|
+  create_table "books", :force => true do |t|
     t.string   "title"
     t.text     "body"
     t.integer  "category_id"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20140130020056) do
     t.float    "price"
   end
 
-  add_index "booktitles", ["category_id"], :name => "index_booktitles_on_category_id"
+  add_index "books", ["category_id"], :name => "index_books_on_category_id"
 
   create_table "categories", :force => true do |t|
     t.string   "title"

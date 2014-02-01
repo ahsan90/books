@@ -1,15 +1,12 @@
 Books::Application.routes.draw do
-  resources :booktitles
+  
+  resources :books, except: [:destroy]
+
   get "welcome/about"
-
   get "welcome/tutors"
-
   get "welcome/privacy"
-
   get "welcome/terms"
-
   get "welcome/index"
-
   get "welcome/contact"
 
   root to: 'welcome#index'

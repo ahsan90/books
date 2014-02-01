@@ -1,0 +1,12 @@
+<h1> Learning Materials </h1>
+<p> Insert a description later </p>
+
+  <% @books.each do |book| %>
+    <p><%= link_to book.title, book %></p>
+    <p>Authour ATAR: <%= book.atar %></p>
+    <p>Mini description: <%= book.body %></p>
+    <p>$<%= book.price %></p>
+  <% end %>
+
+  <%= link_to "Create Book", new_book_path(@book), class: 'btn btn-large btn-block' %>
+  
