@@ -1,15 +1,7 @@
-<h1> Categories </h1>
-<p> Find books in this category </p>
+<h1> Learning Materials </h1>
+<p> Click on your exam and then find materials for that exam </p>
 
-  <% @categories.each do |category| %>
-    <p><%= link_to category.title, category %></p>
-    <p><%= category.body %></p>
-
-  <% end %>
-
-  <%= link_to "Create New Category", new_category_path(@category), class: 'btn btn-large btn-block' %>
-
-
+<p> All materials are done by those who we have verified to achieve scores within the top 5% of their area - so you're in good company </p>
 
 
 
@@ -34,3 +26,6 @@
   </div>
   <% end %>
 </div>
+
+
+<%= link_to "Create New Category", new_category_path(@category), class: 'btn btn-large btn-block' %>
