@@ -9,6 +9,7 @@
   <%= f.text_field :atar %>
   <%= f.label :price %>
   <%= f.text_field :price %>
+  <%= collection_select(:book, :category_id, Category.all, :id, :title, prompt: true) %>
 
 <%= f.submit %>
 

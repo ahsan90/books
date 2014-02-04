@@ -10,14 +10,25 @@ D! Think through controllers/views.
 ## v0.1
 
 D! Web interface to Book - 6 RESTFUL action - create, new, edit, show, update, destroy
-* Model and web interface to categories - basically do the same for categories
-* Try - set up the association btwn book and category and something on book form to set category (drop down list) 
+D! Model and web interface to categories - basically do the same for categories
+D! Try - set up the association btwn book and category and something on book form to set category (drop down list) 
 - rails form helper - populate.
 "Method - collections select" - http://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-collection_select
-
 NO. Nesting - topic and post - e.g. view a category to create a new post.
 
 
+## v0.1.1
+* Refactoring so categories index = book index (categories view - take it out entirely - as tab interface in this - this one page can act - independent page for books show)
+* Create new category in create new book in form - books model change (finder create - ask category table, if not then create a new category).
+* Users - relationship btwn user and books - many to many.
+Set up as a stand alone model.  Rails guide:
+http://guides.rubyonrails.org/association_basics.html#the-has-and-belongs-to-many-association
+Create new table books_users (table) - table has 2 columns, book_id, to user_id (integers) - migration run, 
+Book model , has an belongs to many users (and books)
+@user.books << @book
+
+* Joint table - user and books - 
+2 pieces of machinery
 
 
 ## v0.1

@@ -8,4 +8,29 @@
   <% end %>
 
   <%= link_to "Create New Category", new_category_path(@category), class: 'btn btn-large btn-block' %>
-  
+
+
+
+
+
+<ul class="nav nav-tabs">
+  <li class="active">
+    <a href="#all" data-toggle="tab">All</a>
+  </li>
+  <% Category.all.each do |category| %>
+  <li>
+    <a href="#<%= dom_id(category) %>" data-toggle="tab"><%= category.title %></a>
+  </li>
+  <% end %>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="all">
+    <%= render Book.all %>
+  </div>
+  <% Category.all.each do |category| %>
+  <div class="tab-pane" id="<%= dom_id(category)%>" >
+    <%= render category.books %>
+  </div>
+  <% end %>
+</div>
