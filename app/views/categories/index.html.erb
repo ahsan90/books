@@ -1,0 +1,11 @@
+<h1> Categories </h1>
+<p> Find books in this category </p>
+
+  <% @categories.each do |category| %>
+    <p><%= link_to category.title, category %></p>
+    <p><%= category.body %></p>
+
+  <% end %>
+
+  <%= link_to "Create New Category", new_category_path(@category), class: 'btn btn-large btn-block' %>
+  

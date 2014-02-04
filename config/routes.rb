@@ -1,6 +1,7 @@
-Books::Application.routes.draw do
-  
+Books::Application.routes.draw do 
+
   resources :books, except: [:destroy]
+  resources :categories, except: [:destroy]
 
   get "welcome/about"
   get "welcome/tutors"
