@@ -1,0 +1,30 @@
+<h1><%= @user.name %></h1>
+
+
+<%= pluralize(@user.books.count, 'books') %>,
+<%= pluralize(@user.books.count, 'corrections') %>
+
+
+<div class="row">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#books" data-toggle="tab">Books</a></li>
+      <li><a href="#books" data-toggle="tab">Corrections</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="books">
+        <% if @user.books.count > 0 %>
+          <%= render @user.books %>
+        <% else %>
+          <p> Start collecting stars by buying some books </p>
+        <% end %>
+      </div>
+      <div class="tab-pane" id="books">
+        <% if @user.books.count > 0 %>
+          <%= render @user.books %>
+        <% else %>
+          <p> Start collecting stars by buying some books </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
