@@ -1,10 +1,14 @@
 <h1>Welcome to Exam Success</h1>
 <p>Learn from Top Scorers.</p>
+  <p>
+      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary btn-large' %> or 
+      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary btn-large' %> today!
+  </p>
 
 
-<%= link_to "Buy Books and Videos", categories_path(@category), class: 'btn btn-primary btn-mini' %>
+<%= link_to "Buy Books and Videos", books_path, class: 'btn btn-primary btn-mini' %>
 <p>from Top Scorers</p>
 
-<%= link_to "Improve Your English", categories_path(@category), class: 'btn btn-primary btn-mini' %>
+<%= link_to "Improve Your English", books_path(@category), class: 'btn btn-primary btn-mini' %>
 <p>Collect stars each time you practice and get feedback</p>
 <p>Feedback provided by top scorer</p>

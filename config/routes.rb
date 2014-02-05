@@ -1,7 +1,9 @@
 Books::Application.routes.draw do 
 
+  devise_for :users
+
   resources :books, except: [:destroy]
-  resources :categories, except: [:destroy]
+  resources :categories, except: [:destroy, :index, :show]
 
   get "welcome/about"
   get "welcome/tutors"
