@@ -8,20 +8,25 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new(params[:id])
+    authorize! :create, Book, message: "You need to be a moderator to create a new book."
   end
 
   def edit
     @book = Book.find(params[:id])
+    authorize! :edit, @book, message: "You need to be a moderator to do that."
   end
 
   def create
     @book = Book.new(params[:book])
-    @book.save
+    authorize! :create, @book, message: 'You need to be a moderator to do that.'
+    if @book.save
     redirect_to @book
+    end
   end
 
   def update
     @book = Book.find(params[:id])
+    authorize! :update, @book, message: "You need to be a moderator to do that."
     if @book.update_attributes(params[:book])
       flash[:notice] = "Book was updated."
       redirect_to @book
