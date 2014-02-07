@@ -6,6 +6,7 @@ Books::Application.routes.draw do
   resources :users, only: [:show, :index]
   resources :books, except: [:destroy]
   resources :categories, except: [:destroy]
+  resources :charges
 
   get "welcome/about"
   get "welcome/tutors"
