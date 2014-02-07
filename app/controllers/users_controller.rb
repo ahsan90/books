@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
-    authorize! :index, Users
-#    @users = User.accessible_by(current_ability)
+    @users = User.all
+    authorize! :index, User
   end
 
   def show

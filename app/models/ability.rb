@@ -13,7 +13,7 @@ class Ability
         can :manage, :all
     end
 
-    can :read, :all
+    can :show, User, id: user.id
     
 
     #   if user.admin?

@@ -4,6 +4,12 @@
 <%= pluralize(@user.books.count, 'books') %>,
 <%= pluralize(@user.books.count, 'corrections') %>
 
+<% if @user.role? :admin %>
+  <li>
+    <%= link_to 'Users Index', users_path %>
+  </li>
+<% end %>
+
 
 <div class="row">
     <ul class="nav nav-tabs">
