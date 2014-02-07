@@ -16,3 +16,6 @@
 
 # Ignore the password file
 /config/application.yml
+
+# Carrierwave image
+public/uploads

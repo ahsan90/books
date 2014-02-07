@@ -10,7 +10,9 @@
   <%= f.label :price %>
   <%= f.text_field :price %>
   <%= collection_select(:book, :category_id, Category.all, :id, :title, prompt: true) %>
-
+  <%= f.label :display, class: 'control-label' %>
+  <%= f.file_field :display %>
+  
 <%= f.submit %>
 
 <% end %>
