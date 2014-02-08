@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140206230833) do
+ActiveRecord::Schema.define(:version => 20140208010130) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20140206230833) do
     t.float    "atar"
     t.float    "price"
     t.string   "display"
+    t.string   "file"
   end
 
   add_index "books", ["category_id"], :name => "index_books_on_category_id"
