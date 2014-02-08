@@ -4,9 +4,10 @@ Books::Application.routes.draw do
   devise_for :users
 
   resources :users, only: [:show, :index]
-  resources :books, except: [:destroy]
+  resources :books, except: [:destroy] do
+    post :buy, to: 'books#buy'
+  end
   resources :categories, except: [:destroy]
-  resources :charges
 
   get "welcome/about"
   get "welcome/tutors"
