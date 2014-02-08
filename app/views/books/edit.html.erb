@@ -12,6 +12,8 @@
   <%= collection_select(:book, :category_id, Category.all, :id, :title, prompt: true) %>
   <%= f.label :display, class: 'control-label' %>
   <%= f.file_field :display %>
+  <%= f.label :preview, class: 'control-label' %>
+  <%= f.file_field :preview %>
   
 <%= f.submit %>
 

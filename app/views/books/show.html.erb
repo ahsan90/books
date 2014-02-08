@@ -1,8 +1,8 @@
 <h1><%= @book.title %></h1>
 <p>Author ATAR: <%= @book.atar %></p>
-<p>AUD: <%= @book.price %></p>
+<p>What's this about? <%= simple_format(@book.body) %></p>
+<p>Amount: <%= @book.price %></p>
 
-<p>What's this about? <%= @book.body %></p>
 
 
 <% if can? :edit, Book %>
