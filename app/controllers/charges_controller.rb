@@ -7,12 +7,12 @@ class ChargesController < ApplicationController
     @book = Book.find(params[:id])
     @user = User.find(params[:id])
     
-    @amount = @book.price
+    @amount = @book.price_in_cents
 
-    customer = Stripe::Customer.create(
-      :email => @user.email,
-      :card => params[:stripeToken]
-      )
+    #customer = Stripe::Customer.create(
+    #  :email => @user.email,
+    #  :card => params[:stripeToken]
+     # )
 
     charge = Stripe::Charge.create(
       :card => params[:stripeToken],

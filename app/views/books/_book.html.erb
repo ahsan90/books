@@ -12,5 +12,5 @@
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="Bought <%= book.title %>"
-          data-amount="<%= book.price %>"></script>
+          data-amount="<%= book.price_in_cents %>"></script>
 <% end %>

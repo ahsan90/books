@@ -5,4 +5,9 @@ class Book < ActiveRecord::Base
   mount_uploader :display, DisplayUploader
 
   default_scope order('created_at DESC')
+
+  def price_in_cents
+    self.price * 100
+  end
+  
 end
