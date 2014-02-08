@@ -34,11 +34,11 @@ class DisplayUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fill => [30, 60]
+    process :resize_to_fill => [100, 200]
   end
 
   version :regular do
-    process :resize_to_fill => [50, 100]
+    process :resize_to_fill => [200, 400]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
