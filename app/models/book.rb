@@ -9,4 +9,9 @@ class Book < ActiveRecord::Base
   default_scope order('created_at DESC')
 
   validates :category, presence: true
+
+  def price_in_cents
+    self.price * 100
+  end
+  
 end
