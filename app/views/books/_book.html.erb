@@ -1,4 +1,3 @@
-<% if current_user %>
   <p><%= link_to book.title, book %></p>
   <p>Authour ATAR: <%= book.atar %></p>
   <p>Mini description: <%= book.body %></p>
@@ -7,12 +6,15 @@
     <span>Amount: <%= book.price %> </span>
   </label>
 
-  <% if current_user.books.include?(book) %>
-    <% link_to "Download", "http://www.ninemsn.com.au/" %>
+  <% if current_user && current_user.books.include?(book) %>
+    <%= link_to "Download", "http://www.ninemsn.com.au/" %>
+    <!-- book.file.url -->
   <% else %>
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    <%= form_tag book_buy_path(book) do %>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
         data-description="Bought <%= book.title %>"
         data-amount="<%= book.price_in_cents %>"></script>
+    <% end %>
   <% end %>
-<% end %>
+
