@@ -13,5 +13,15 @@ class Book < ActiveRecord::Base
   def price_in_cents
     self.price * 100
   end
+
+  after_save :send_book_emails
+
+  private
+
+  def send_book_emails
+    self.book.each do |book|
+      BookMailer.book_purchase(self.book, self).deliver
+    end
+  end
   
 end

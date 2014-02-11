@@ -49,9 +49,17 @@ class BooksController < ApplicationController
       description: @book.title
     )
 
-    current_user.books << @book
-    flash[:success] = "#{current_user.name} bought #{@book.title}!"
-    redirect_to :back
+    if current_user
+      current_user.books << @book
+      flash[:notice] = "#{current_user.name} bought #{@book.title}!"
+      redirect_to :back
+    else
+      flash[:notice] = "An email with your ebook is now on its way to you!"
+      #send_book_emails - help!
+      # flash doesn't seem to be working!
+      redirect_to :back
+      # Email it out!
+    end
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
