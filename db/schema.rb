@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20140208102019) do
     t.float    "price"
     t.string   "display"
     t.string   "file"
+    t.string   "preview"
   end
 
   add_index "books", ["category_id"], :name => "index_books_on_category_id"

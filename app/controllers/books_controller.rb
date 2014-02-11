@@ -20,7 +20,10 @@ class BooksController < ApplicationController
     @book = Book.new(params[:book])
     authorize! :create, @book, message: 'You need to be a moderator to do that.'
     if @book.save
-    redirect_to @book
+      redirect_to @book
+    else
+      flash[:error] = "There was an error saving the book. Please try again."
+      render :new 
     end
   end
 

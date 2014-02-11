@@ -1,16 +1,1 @@
-<h1> Fill in the form to create a new book </h1>
-
-<%= form_for @book do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :body %>
-  <%= f.text_field :body %>
-  <%= f.label :atar %>
-  <%= f.text_field :atar %>
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  <%= collection_select(:book, :category_id, Category.all, :id, :title, prompt: true) %>
-
-<%= f.submit %>
-
-<% end %>
+<%= render partial: 'form', locals: {book: @book} %>
