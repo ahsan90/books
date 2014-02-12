@@ -1,1 +1,12 @@
 @import "bootstrap";
+
+.navbar .brand
+  {
+    display: block;
+    height: 125px;
+    width: 246px;
+    padding: 0;
+    background: url('../Content/Images/logo.png') no-repeat left center;
+    float:left;
+    position: absolute;
+  }
