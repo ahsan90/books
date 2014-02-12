@@ -1,10 +1,10 @@
 class BookMailer < ActionMailer::Base
   default from: "success@examsuccess.com.au"
 
-  def book_purchase(book)
+  def book_purchase(user, book)
     @book = book
-    @email = Book.find(params[:stripeEmail])
-    @name = Book.find(params[:stripeBillingName])
+    @email = user.email
+    # @name = user.name
     
 
     # New Headers

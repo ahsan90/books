@@ -66,4 +66,11 @@ module Books
     config.assets.version = '1.0'
     config.assets.initialize_on_precompile = false
   end
+
+  #module Books
+  #  class Application < Rails::Application
+  #   config.force_ssl = true
+  #  end
+  #end
+
 end
