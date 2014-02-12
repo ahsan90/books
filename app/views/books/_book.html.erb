@@ -2,15 +2,15 @@
   <p><%= link_to book.title, book %></p>
   <p>Authour ATAR: <%= book.atar %></p>
   <p>Mini description: <%= book.body %></p>
-  <%#= image_tag book.display.thumb.url %>
-  <%= image_tag 'http://placehold.it/80x120' %>
+  <%= image_tag book.display.thumb.url %>
+  <%#= image_tag 'http://placehold.it/80x120' %>
   <%= link_to "Free preview", book.preview.url %>
   <label class="amount">
     <span>Amount: <%= book.price %> </span>
   </label>
 
   <% if current_user && current_user.books.include?(book) %>
-    <%= link_to "Download", "http://www.ninemsn.com.au/" %>
+    <%= link_to "Download", book.file.url %>
     <!-- book.file.url -->
   <% else %>
     <%= form_tag book_buy_path(book) do %>
