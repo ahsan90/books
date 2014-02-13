@@ -1,4 +1,4 @@
-class Contact < ActiveRecord::Base
+class Contact
   # attr_accessible :title, :body
   include ActiveModel::Validations
   include ActiveModel::Conversion

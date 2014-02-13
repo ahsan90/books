@@ -41,7 +41,7 @@
   <%= link_to "Create New Book", new_book_path(Book.new), class: 'btn btn-large btn-block' %>
 <% end %>
 
-<%= render :partial => 'contacts/contact', locals: {contact: Contact.new} %>
+<%= render partial: 'contacts/contact', locals: {contact: Contact.new} %>
 
 
 
