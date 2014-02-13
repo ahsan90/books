@@ -50,7 +50,12 @@ class BooksController < ApplicationController
     )
 
     if current_user
-      current_user.books << @book
+      # current_user.books << @book
+      # vi.com/books/1234?referrer=otherguy
+      # params[:referrer]
+      # => 'otherguy'
+
+      Purchase.create(user: current_user, book: @book, referrer: '')
       flash[:notice] = "#{current_user.name} bought #{@book.title}!"
     else
       flash[:notice] = "An email with your ebook is now on its way to you!"
