@@ -1,0 +1,16 @@
+<p> Can't find what you're looking for? </p>
+<p> or Have Notes you want to Share/Sell? </p>
+<p> Get in touch! </p>
+
+
+<%= form_for contact do |f| %>
+  Your email: <%= f.label :email %>
+  <%= f.email_field :email, :autofocus => true %>
+  <%= f.label :body, "Your message" %>
+  <%= f.text_area :body %>
+  <%#= f.label "What's 9 + 1 ?" %>
+  <%#= f.text_field = 10 %>
+  
+<%= f.submit "Contact us" %>
+
+<% end %>

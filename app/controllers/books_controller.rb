@@ -49,8 +49,14 @@ class BooksController < ApplicationController
       description: @book.title
     )
 
-    current_user.books << @book
-    flash[:success] = "#{current_user.name} bought #{@book.title}!"
+    if current_user
+      current_user.books << @book
+      flash[:notice] = "#{current_user.name} bought #{@book.title}!"
+    else
+      flash[:notice] = "An email with your ebook is now on its way to you!"
+    end
+    @user = User.new(email: params[:stripeEmail])
+    BookMailer.book_purchase(@user, @book).deliver
     redirect_to :back
 
   rescue Stripe::CardError => e
