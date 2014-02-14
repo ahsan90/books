@@ -4,6 +4,7 @@ Books::Application.routes.draw do
   devise_for :users
 #match 'contact' => 'contact#new', :as => 'contact', :via => :get
 #match 'contact' => 'contact#create', :as => 'contact', :via => :post
+  resources :purchases
   resources :contacts, only: [:create, :new]
   resources :users, only: [:show, :index]
   resources :books, except: [:destroy] do
