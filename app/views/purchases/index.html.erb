@@ -3,7 +3,7 @@
 <% Purchase.all.each do |purchase| %>
   <p><%= purchase.book.title %> </p>
   <%#= purchase.user.email %>
-  <%#= purchase.referrer.code %>
+  <%= purchase.referrer.code %>
   <%#= purchase.referrer.email %>
   <%= purchase.book.price %>
 <% end %>
