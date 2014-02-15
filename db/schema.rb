@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(:version => 20140214093701) do
     t.integer  "book_id"
     t.string   "referrer"
     t.integer  "referrer_id"
-    t.datetime "saledate"
   end
 
   create_table "referrers", :force => true do |t|

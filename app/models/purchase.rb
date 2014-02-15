@@ -3,6 +3,6 @@ class Purchase < ActiveRecord::Base
   belongs_to :book
   belongs_to :referrer
 
-  attr_accessible :user, :book, :referrer, :saledate
+  attr_accessible :user, :book, :referrer
 
 end
