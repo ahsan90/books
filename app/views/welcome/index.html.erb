@@ -1,14 +1,26 @@
-<h1>Welcome to Exam Success</h1>
-<p>Learn from Top Scorers.</p>
-  <p>
-      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary btn-large' %> or 
-      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary btn-large' %> today!
-  </p>
+<div class="hero-unit">
+  <div class="container">
+    <h1>Ace Your Exams!</h1>
+    <ol>
+      <h2></h2>
+      <li>Buy Books and Notes from Top Teachers & Tutors </li>
+      <li>Improve your English with Help from English Experts!</li>
+    </ol>
+    <button type="button" class="btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-star"></span> Star
+    </button>
+    <div class="row">
+      <div class="span4">
+        <%= link_to "Buy Books", books_path, class: 'btn btn-primary btn-xl btn-block' %>
+          <span class="glyphicon glyphicon-pencil"></span>
+      </div>
+      <div class="span4">
+        <%= link_to "Practice Your Writing", books_path(@category), class: 'btn btn-primary btn-xl btn-block' %>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-<%= link_to "Buy Books and Videos", books_path, class: 'btn btn-primary btn-mini' %>
-<p>from Top Scorers</p>
-
-<%= link_to "Improve Your English", books_path(@category), class: 'btn btn-primary btn-mini' %>
-<p>Collect stars each time you practice and get feedback</p>
-<p>Feedback provided by top scorer</p>
+          <span class="glyphicon glyphicon-pencil"></span>
+        <p>Get  books, notes and videos written by ATARs 95+, IELTS 6.0+ and qualified teachers to help you prepare for your exam.</p>
+        <p>Improve your English Writing, Get Detailed Feedback and Collect Stars while you learn!</p>
