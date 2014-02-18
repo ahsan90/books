@@ -13,6 +13,13 @@
     <p> We hope that you find it useful in your exam preparation.  </p>
     <p> In the meantime, if you have any questions, please feel free to contact us </p>.
 
+    <% if @temp_password %>
+      <p> We've created an user account for you.  Here's your temporary password:
+      </p>
+      <p> <%= @temp_password %> </p>
+      <p> You can log into the site at any time and re-download any new books that you have bought. </p>
+    <% end %>
+
     <p> Best Regards </p>
     <p> Vi from Exam Success </p>
 

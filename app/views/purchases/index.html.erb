@@ -1,0 +1,10 @@
+
+<p>List of all the purchases and their users</p>
+<% Purchase.all.each do |purchase| %>
+  <p><%= purchase.book.title %> </p>
+  <p><%= purchase.created_at %></p>
+  <p><%= purchase.user.email if purchase.user %> </p>
+  <p><%= purchase.referrer.code if purchase.referrer %> </p>
+  <p><%= purchase.referrer.email if purchase.referrer %> </p>
+  <p><%= purchase.book.price %> </p>
+<% end %>

@@ -50,18 +50,17 @@ class BooksController < ApplicationController
     )
 
     if current_user
-      # current_user.books << @book
-      # vi.com/books/1234?referrer=otherguy
-      # params[:referrer]
-      # => 'otherguy'
-
-      Purchase.create(user: current_user, book: @book, referrer: '')
+      @user = current_user
       flash[:notice] = "#{current_user.name} bought #{@book.title}!"
     else
+      @temp_password = Devise.friendly_token.first(12)
+      @user = User.create(email: params[:stripeEmail], password: @temp_password)
       flash[:notice] = "An email with your ebook is now on its way to you!"
     end
-    @user = User.new(email: params[:stripeEmail])
-    BookMailer.book_purchase(@user, @book).deliver
+
+    @referrer = Referrer.find_by_code(session[:referrer])
+    Purchase.create(user: @user, book: @book, referrer: @referrer)
+    BookMailer.book_purchase(@user, @book, @temp_password).deliver
     redirect_to :back
 
   rescue Stripe::CardError => e

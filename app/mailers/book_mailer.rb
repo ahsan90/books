@@ -1,9 +1,10 @@
 class BookMailer < ActionMailer::Base
   default from: "success@examsuccess.com.au"
 
-  def book_purchase(user, book)
+  def book_purchase(user, book, temp_password)
     @book = book
     @email = user.email
+    @temp_password = temp_password
     # @name = user.name
     
 
