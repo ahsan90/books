@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(params[:category])
     authorize! :create, @category, message: 'You need to be a moderator to do that.'
     if @category.save
-      redirect_to @category
+      redirect_to books_path
     end
   end
 
@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
     authorize! :update, @category, message: "You need to be a moderator to do that."
     if @category.update_attributes(params[:category])
       flash[:notice] = "Category was updated."
-      redirect_to @category
+      redirect_to @books_path
     else
       flash[:error] = "There was an error saving the category. Please try again."
       render :edit

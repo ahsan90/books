@@ -35,15 +35,9 @@ ActiveRecord::Schema.define(:version => 20140215094907) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "contacts", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "purchases", :force => true do |t|
     t.integer  "user_id"
     t.integer  "book_id"
-    t.string   "referrer"
     t.integer  "referrer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
