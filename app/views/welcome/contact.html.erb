@@ -1,2 +1,24 @@
-<h1>Welcome#contact</h1>
-<p>Find me in app/views/welcome/contact.html.erb</p>
+<p class="lead">Exam Success is your convenient one-stop shop for your child's exam needs.</p>
+
+<p> We help your child improve their writing in a fun way.</p>
+<p> We assist your children in exam preparation by bringing together the <strong>best minds</strong> to provide your children with access to affordable learning materials without compromising on quality.</p>
+
+<address>
+  <strong>Exam Success Pty Ltd</strong><br>
+  31 Arden St<br>
+  North Melbourne, VIC 3051<br>
+  <abbr title="Phone">P:</abbr> (03) 9005 8147
+  <abbr title="Mobile">M:</abbr> (04) 3253 7748
+</address>
+
+<address>
+  <strong>Have a question for Exam Success? <br>
+  Just contact us on the form below.
+  We'll endeavour to answer your question in 24 hours.</strong><br>
+</address>
+
+<div class="col-md-6">
+  <form class="form-horizontal" role="form">
+    <%= render partial: 'contacts/contact', locals: {contact: Contact.new} %>
+  </form>
+</div>
