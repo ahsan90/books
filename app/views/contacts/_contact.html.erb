@@ -1,16 +1,18 @@
-<p> Can't find what you're looking for? </p>
-<p> or Have Notes you want to Share/Sell? </p>
-<p> Get in touch! </p>
+<blockquote>
+  <p><strong>Can't find what you're looking for?</strong> or Have Notes you want to Share/Sell? </p>
+  <p> Get in touch! </p>
+</blockquote>
 
 
-<%= form_for contact do |f| %>
-  Your email: <%= f.label :email %>
-  <%= f.email_field :email, :autofocus => true %>
-  <%= f.label :body, "Your message" %>
-  <%= f.text_area :body %>
-  <%#= f.label "What's 9 + 1 ?" %>
-  <%#= f.text_field = 10 %>
-  
-<%= f.submit "Contact us" %>
 
+<%= form_for contact, html: {role: 'form'} do |f| %>
+<div class='form-group'>
+  <%= f.label :email, 'Your email:' %>
+  <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+</div>
+<div class='form-group'>
+  <%= f.label :body, 'Your message:' %>
+  <%= f.text_area :body, :id => "message_area", :cols => 8, :rows => 8, class: 'form-control' %>
+</div>
+<%= f.submit "Contact us", class: 'btn btn-default' %>
 <% end %>

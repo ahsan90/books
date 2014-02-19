@@ -159,10 +159,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 3.1.1.0)
+  bootstrap-sass (~> 3.1.1)
   cancan
   carrierwave
-  coffee-rails (~> 3.2.2)
+  coffee-rails (~> 3.2.1)
   devise
   figaro
   fog
@@ -170,7 +170,7 @@ DEPENDENCIES
   mini_magick
   pg
   rails (= 3.2.13)
-  sass-rails (~> 3.2.4)
+  sass-rails (~> 3.2.3)
   sqlite3
   stripe!
   uglifier (>= 1.0.3)

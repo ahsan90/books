@@ -2,46 +2,60 @@
 <p> Click on your exam and then find materials for that exam </p>
 
 <p> All materials are done by those who we have verified to achieve scores within the top 5% of their area - so you're in good company </p>
+<br> </br>
 
 
-
-<ul class="nav nav-tabs">
-  <li class="active">
-    <a href="#all" data-toggle="tab">All</a>
-  </li>
-  <% Category.all.each do |category| %>
-    <li>
-      <a href="#<%= dom_id(category) %>" data-toggle="tab"><%= category.title %></a>
-      <% if can? :edit, Category %>
-        <small>
-          <%= link_to 'edit', edit_category_path(category) %>
-        </small>
-      <% end %>
+<div class="col-md-2">
+  <ul class="nav nav-tabs nav-stacked">
+    <li class="active">
+      <a href="#all" data-toggle="tab">Choose Your Exam</a>
     </li>
-  <% end %>
+    <% Category.all.each do |category| %>
+      <li>
+        <a href="#<%= dom_id(category) %>" data-toggle="tab"><%= category.title %></a>
+        <% if can? :edit, Category %>
+          <small>
+            <%= link_to 'edit', edit_category_path(category) %>
+          </small>
+        <% end %>
+      </li>
+    <% end %>
     <% if can? :create, Category %>
       <li>
         <%= link_to 'new', new_category_path %>
       </li>
     <% end %>
   </ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="all">
-    <%= render Book.all %>
-  </div>
-  <% Category.all.each do |category| %>
-  <div class="tab-pane" id="<%= dom_id(category)%>" >
-    <%= render category.books %>
-  </div>
-  <% end %>
 </div>
 
-<% if can? :create, Book %>
-  <%= link_to "Create New Book", new_book_path(Book.new), class: 'btn btn-large btn-block' %>
-<% end %>
+<div class="col-md-10">
+  <div class="tab-content">
+    <div class="tab-pane active" id="all">
+      <%= render Book.all %>
+    </div>
+    <% Category.all.each do |category| %>
+    <div class="tab-pane" id="<%= dom_id(category)%>" >
+      <div class="row">
+        <%= render category.books %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
-<%= render partial: 'contacts/contact', locals: {contact: Contact.new} %>
+<div class="col-md-2">
+</div>
+
+<div class="col-md-8">
+  <form class="form-horizontal" role="form">
+    <%= render partial: 'contacts/contact', locals: {contact: Contact.new} %>
+  </form>
+</div>
+
+  <% if can? :create, Book %>
+    <%= link_to "Create New Book", new_book_path(Book.new), class: 'btn btn-large btn-block' %>
+  <% end %>
+
 
 
 

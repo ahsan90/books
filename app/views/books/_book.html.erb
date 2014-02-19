@@ -1,23 +1,28 @@
+<div class="col-xs-6 col-md-3">
+  <div class="thumbnail">
+    <%= image_tag book.display.thumb.url %>
+    <%#= image_tag 'http://placehold.it/80x120' %> 
 
-  <p><%= link_to book.title, book %></p>
-  <p>Authour ATAR: <%= book.atar %></p>
-  <p>Mini description: <%= book.body %></p>
-  <%= image_tag book.display.thumb.url %>
-  <%#= image_tag 'http://placehold.it/80x120' %>
-  <%= link_to "Free preview", book.preview.url %>
-  <label class="amount">
-    <span>Amount: <%= book.price %> </span>
-  </label>
-
-  <% if current_user && current_user.books.include?(book) %>
-    <%= link_to "Download", book.file.url %>
-    <!-- book.file.url -->
-  <% else %>
-    <%= form_tag book_buy_path(book) do %>
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-        data-description="Bought <%= book.title %>"
-        data-amount="<%= book.price_in_cents %>"></script>
+  <div class="caption">
+    <h5><%= link_to book.title, book %></h5>
+    <p><small>ATAR/IELTS: <%= book.atar %></small></p>
+    <p><small><%= book.body %></small></p>
+    <p><small>AUD <%= book.price %></small></p>
+    <%= link_to book.preview.url, class: "btn btn-default btn-xs" do %>
+      Free Preview
     <% end %>
-  <% end %>
+  </div>  
 
+    <% if current_user && current_user.books.include?(book) %>
+      <p><%= link_to "Download", book.file.url %></p>
+      <!-- book.file.url -->
+    <% else %>
+      <%= form_tag book_buy_path(book) do %>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-description="Bought <%= book.title %>"
+      data-amount="<%= book.price_in_cents %>"></script>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -8,65 +8,64 @@
 </head>
 <body>
 
+<div class="container">
   <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <div class="container">
-          <%= link_to root_path, class: "navbar-brand" do %>
-            <img src="/logo.png" width="200" height="150" alt="rss feed" />
-          <% end %>
-        </div>
-        <div class="container">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Home", welcome_index_path %></li>
-            <li><%= link_to "Our Tutors & Partners", welcome_tutors_path %></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact + More <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><%= link_to "Contact", welcome_contact_path %></li>
-                <li><%= link_to "About", welcome_about_path %></li>
-                <li><%= link_to "Privacy", welcome_privacy_path %></li>
-                <li><%= link_to "Terms & Conditions", welcome_terms_path %></li>
-              </ul>
-            </li>
-            <ul class="nav navbar-nav navbar-right">
-              <% if current_user %>
-                Hello <%= link_to (current_user.name || current_user.email), current_user %>!
-                <%= link_to edit_user_registration_path, class: 'btn btn-mini' do %>
-                  <i class="icon-user"></i>
-                <% end %>
-                <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-mini' do %>
-                <i class="icon-share-alt"></i>
-                <% end %>
-              <% else %>
-                <%= link_to "Sign In", new_user_session_path %> or 
-                <%= link_to "Sign Up", new_user_registration_path %>
-              <% end %>
-            </ul>
+    <div class="navbar-header">
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <img src="/logo.png" width="130" height="50" alt="rss feed" />
+      <% end %>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Books", books_path %></li>
+        <li><%= link_to "English Writing", welcome_writing_path %></li>
+        <li><%= link_to "Our Tutors & Partners", welcome_tutors_path %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact + More <b class="caret"></b></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to "Contact", welcome_contact_path %></li>
+            <li><%= link_to "About", welcome_about_path %></li>
+            <li><%= link_to "Privacy", welcome_privacy_path %></li>
+            <li><%= link_to "Terms & Conditions", welcome_terms_path %></li>
           </ul>
-        </div>
-      </div>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+          <p class="navbar-text">Hello</p><li><%= link_to (current_user.name || current_user.email), current_user %></li><p class="navbar-text">!</p>
+          <li><%= link_to edit_user_registration_path, class: 'btn btn-mini' do %>
+              <span class="glyphicon glyphicon-user"></span>
+            <% end %></li>
+          </li><%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-mini' do %></li>
+          <li><span class="glyphicon glyphicon-log-out"></span></li>
+          <% end %>
+        <% else %>
+          <li><%= link_to "Sign In", new_user_session_path %></li><p class="navbar-text"> or </p>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% end %>
+      </ul>
     </div>
   </nav>
 
-  <% if flash[:notice] %>
-    <div class="alert alert-success">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:notice] %>
-    </div>
-  <% elsif flash[:error] %>
-    <div class="alert alert-error">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:error] %>
-    </div>
-  <% elsif flash[:alert] %>
-    <div class="alert">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <%= flash[:alert] %>
-    </div>
-  <% end %>
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:notice] %>
+      </div>
+    <% elsif flash[:error] %>
+      <div class="alert alert-error">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:error] %>
+      </div>
+    <% elsif flash[:alert] %>
+      <div class="alert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
 
-  <%= yield %>
-  <%= javascript_include_tag "application" %>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </div>
 </body>
 </html>

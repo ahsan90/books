@@ -18,6 +18,7 @@ Books::Application.routes.draw do
   get "welcome/terms"
   get "welcome/index"
   get "welcome/contact"
+  get "welcome/writing"
 
   root to: 'welcome#index'
 

@@ -22,10 +22,11 @@ class CategoriesController < ApplicationController
     authorize! :update, @category, message: "You need to be a moderator to do that."
     if @category.update_attributes(params[:category])
       flash[:notice] = "Category was updated."
-      redirect_to @books_path
+      redirect_to books_path
     else
       flash[:error] = "There was an error saving the category. Please try again."
       render :edit
+      redirect_to books_path
     end
   end
   
