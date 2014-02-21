@@ -1,10 +1,28 @@
+<h4>Purchase Details</h4>
+<br></br>
 
-<p>List of all the purchases and their users</p>
-<% Purchase.all.each do |purchase| %>
-  <p><%= purchase.book.title %> </p>
-  <p><%= purchase.created_at.in_time_zone('Melbourne').strftime('%d/%m/%Y %H:%M:%S') %></p>
-  <p><%= purchase.user.email if purchase.user %> </p>
-  <p><%= purchase.referrer.code if purchase.referrer %> </p>
-  <p><%= purchase.referrer.email if purchase.referrer %> </p>
-  <p><%= purchase.book.price %> </p>
-<% end %>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Purchase Date</th>
+        <th>Book title</th>
+        <th>Price paid</th>
+        <th>Purchaser's email</th>
+        <th>Referrer code (if any)</th>
+        <th>Referrer email (if code exists)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Purchase.all.each do |purchase| %>
+      <tr>
+        <td><%= purchase.created_at.in_time_zone('Melbourne').strftime('%d/%m/%Y %H:%M:%S') %></td>
+        <td><%= purchase.book.title %></td>
+        <td><%= purchase.book.price %> </td>
+        <td><%= purchase.user.email if purchase.user %></td>
+        <td><%= purchase.referrer.code if purchase.referrer %></td>
+        <td><%= purchase.referrer.email if purchase.referrer %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
