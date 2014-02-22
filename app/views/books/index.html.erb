@@ -54,11 +54,14 @@
   <form class="form-horizontal" role="form">
     <%= render partial: 'contacts/contact', locals: {contact: Contact.new} %>
   </form>
+  <br></br>
+  <% if can? :create, Book %>
+    <%= link_to "Create New Book", new_book_path(Book.new), class: 'btn btn-danger btn-lg' %>
+  <% end %>
+  <br></br>
 </div>
 
-  <% if can? :create, Book %>
-    <%= link_to "Create New Book", new_book_path(Book.new), class: 'btn btn-large btn-block' %>
-  <% end %>
+
 
 
 

@@ -1,22 +1,40 @@
-<h1> Fill in the form </h1>
+<h2> Fill in the form to create a new book/edit book </h2>
+<br></br>
 
-<%= form_for book do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :body %>
-  <%= f.text_field :body %>
-  <%= f.label :atar %>
-  <%= f.text_field :atar %>
-  <%= f.label :price %>
-  <%= f.text_field :price %>
-  <%= collection_select(:book, :category_id, Category.all, :id, :title, prompt: true) %>
-  <%= f.label :display, class: 'control-label' %>
-  <%= f.file_field :display %>
-  <%= f.label :preview, class: 'control-label' %>
-  <%= f.file_field :preview %>
-  <%= f.label :file, class: 'control-label' %>
-  <%= f.file_field :file %>
-  
-<%= f.submit %>
-
-<% end %>
+<div class="col-md-8">
+  <%= form_for book, html: {role: 'form'} do |f| %>
+    <div class= 'form-group'>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    <div class= 'form-group'>
+      <%= f.label :body %>
+      <%= f.text_area :body, :cols => 8, :rows => 8, class: 'form-control' %>
+    </div>
+    <div class= 'form-group'>
+      <%= f.label :atar %>
+      <%= f.text_field :atar, class: 'form-control' %>
+    </div>
+    <div class= 'form-group'>
+      <%= f.label :price %>
+      <%= f.text_field :price, class: 'form-control' %>
+    </div>
+    <div class= 'form-group'>
+      <p><strong>Category</strong></p>
+      <%= collection_select(:book, :category_id, Category.all, :id, :title, prompt: true) %>
+    </div>
+    <div class= 'form-group'>
+      <%= f.label :display, class: 'control-label' %>
+      <%= f.file_field :display %>
+    </div>
+    <div class= 'form-group'>
+      <%= f.label :preview, class: 'control-label' %>
+      <%= f.file_field :preview %>
+    </div>
+    <div class= 'form-group'>
+      <%= f.label :file, class: 'control-label' %>
+      <%= f.file_field :file %>
+    </div>
+    <%= f.submit "Create/Edit Book", class: 'btn btn-primary' %>
+  <% end %>
+</div>

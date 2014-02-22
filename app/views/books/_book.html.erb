@@ -1,17 +1,45 @@
-<div class="col-xs-6 col-md-3">
+
+<!-- Model code -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><%= book.title %></h4>
+          </div>
+          <div class="modal-body">
+            <%= book.body %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+ 
+<!-- Thumbnails commence -->
+
+<div class="col-md-4">
   <div class="thumbnail">
     <%= image_tag book.display.thumb.url %>
     <%#= image_tag 'http://placehold.it/80x120' %> 
 
   <div class="caption">
-    <h5><%= link_to book.title, book %></h5>
-    <p><small>ATAR/IELTS: <%= book.atar %></small></p>
-    <p><small><%= book.body %></small></p>
-    <p><small>AUD <%= book.price %></small></p>
-    <%= link_to book.preview.url, class: "btn btn-default btn-xs" do %>
+    <h4><%= book.title %></h4>
+    <p>Author's Score (ATAR or IELTS): <%= book.atar %></p>
+    <a href="#" data-toggle="modal" data-target="#myModal">
+      Click here for full description...
+    </a>
+    <p> or check out the FREE preview....</p>
+    <p></p>
+    <%= link_to book.preview.url, class: "btn btn-default btn-sm" do %>
       Free Preview
     <% end %>
-  </div>  
+    <% if can? :edit, Book %>
+      <%= link_to "Edit Book", edit_book_path(book), class: 'btn btn-warning btn-xs' %>
+    <% end %>
+    <p></p>
 
     <% if current_user && current_user.books.include?(book) %>
       <p><%= link_to "Download", book.file.url %></p>
@@ -22,6 +50,8 @@
       data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
       data-description="Bought <%= book.title %>"
       data-amount="<%= book.price_in_cents %>"></script>
+      <p><small></small></p>
+      <p class='text-muted'>$ <%= book.price %></p>
       <% end %>
     <% end %>
   </div>
