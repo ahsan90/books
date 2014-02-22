@@ -9,7 +9,7 @@
         <%= f.label :email %>
         <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
       </div>
-      <%= f.submit "Send me reset password instructions" %>
+      <%= f.submit "Send me reset password instructions", class: 'btn btn-default' %>
     <% end %>
     <br></br>
     <%= render "devise/shared/links" %>
