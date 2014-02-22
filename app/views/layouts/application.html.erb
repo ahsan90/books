@@ -3,6 +3,9 @@
 <head>
   <title>Exam Success</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <% if params[:controller] == "welcome" && params[:action] == "index"%>
+    <%= stylesheet_link_tag    "welcome", :media => "all" %>
+  <%end%>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -20,7 +23,7 @@
         <ul class="nav navbar-nav">
           <li><%= link_to "Books", books_path %></li>
           <li><%= link_to "English Writing", welcome_writing_path %></li>
-          <li><%= link_to "Free stuff", welcome_blog_path %></li>
+          <li><%= link_to "Free Stuff", welcome_blog_path %></li>
           <li><%= link_to "Contact", welcome_contact_path %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">

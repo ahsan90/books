@@ -1,26 +1,30 @@
-<br></br>
 <div class="container">
-<div class="jumbotron">
-<h1>Ace Your Exams!</h1>
-<br></br>
-<p>1. Buy Books and Notes from <em>A+ Teachers & Tutors </em></p>
-<p>2. <em>Improve your English</em> with Help from English Experts!</p>
-
-
-<br>
-</br>
-<div class="row">
-  <div class="col-md-4">
-    <%= link_to books_path, class: 'btn btn-primary btn-lg btn-block' do %>
-      <span class="glyphicon glyphicon-book"></span>
-      &nbsp;&nbsp;&nbsp;Buy Books
-    <% end %>
+  <div class="jumbotron">
+  <h1>Ace Your Exams!</h1>
+  <p> Get free and paid book downloads written by top 5% exam scorers.  While you're here, practice your writing and get feedback.  New practice questions up each week :-)
+  </p>
+  <p>&nbsp</p>
+  <div class="row">
+    <div class="col-md-4">
+      <%= link_to books_path, class: 'btn btn-warning btn-lg btn-block' do %>
+        <span class="glyphicon glyphicon-book"></span>
+          &nbsp;&nbsp;&nbsp;Buy Books
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <p>Written specifically for your test by A+ Teachers & Tutors.<p>
+    </div>
   </div>
-  <div class="col-md-4">
-    <%= link_to welcome_writing_path, class: 'btn btn-primary btn-lg btn-block' do %>
-      <span class="glyphicon glyphicon-pencil"></span>
-      &nbsp;&nbsp;&nbsp;Improve Your Writing
-    <% end %>
+  <p></p>
+  <div class='row'>
+    <div class="col-md-4">
+      <%= link_to welcome_writing_path, class: 'btn btn-success btn-lg btn-block' do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+          &nbsp;&nbsp;&nbsp;Improve Your Writing
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <p>Practice your writing with our 'timer' and get in-detail video feedback!</p>
+    </div>
   </div>
-</div>
 </div>
