@@ -1,30 +1,43 @@
-<div class="container">
-  <div class="jumbotron">
-  <h1>Ace Your Exams!</h1>
-  <p> Got a selective/scholarship test or VCE, HSC or IELTS exam?  Get free and paid book downloads written by top 5% scorers.  Practice your writing too.  New practice questions up each week :-)
-  </p>
-  <p>&nbsp</p>
-  <div class="row">
-    <div class="col-md-4">
-      <%= link_to books_path, class: 'btn btn-warning btn-lg btn-block' do %>
-        <span class="glyphicon glyphicon-book"></span>
-          &nbsp;&nbsp;&nbsp;Buy Books
-      <% end %>
-    </div>
-    <div class="col-md-8">
-      <p>Written specifically for your test by A+ Teachers & Tutors.<p>
-    </div>
-  </div>
-  <p></p>
-  <div class='row'>
-    <div class="col-md-4">
-      <%= link_to welcome_writing_path, class: 'btn btn-success btn-lg btn-block' do %>
-        <span class="glyphicon glyphicon-pencil"></span>
-          &nbsp;&nbsp;&nbsp;Improve Your Writing
-      <% end %>
-    </div>
-    <div class="col-md-8">
-      <p>Practice your writing with our 'timer' and get in-detail video feedback!</p>
+<div class="intro-header">
+  <div class="container">
+    <div class="jumbotron">
+    <h1>Ace Your Exams!</h1>
+    <p> Got a selective/scholarship test or VCE, HSC or IELTS exam?  Get free and paid book downloads written by top 5% scorers.  Practice your writing too.  New practice questions up each week :-)
+    </p>
+    <p>&nbsp</p>
+      <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-4">
+          <%= link_to books_path, class: 'btn btn-warning btn-lg btn-block' do %>
+            <span class="glyphicon glyphicon-book"></span>
+              &nbsp;&nbsp;&nbsp;Buy Books
+          <% end %>
+        </div>
+        <div class="col-md-4">
+          <%= link_to welcome_writing_path, class: 'btn btn-success btn-lg btn-block' do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+              &nbsp;&nbsp;&nbsp;Improve Your Writing
+          <% end %>
+        </div>
+        <div class="col-md-2">
+      </div>
     </div>
   </div>
+</div>
+</div>
+
+<div class="content-section-b">
+  <h2> What they've said about us</h2>
+  <div class='col-md-4'>
+    <p>Practice your writing with our 'timer' and get in-detail video feedback!</p>
+  </div>
+  <div class='col-md-4'>
+    <p>Written specifically for your test by A+ Teachers & Tutors.</p>
+  </div>
+  <div class='col-md-4'>
+    <p>Practice your writing with our 'timer' and get in-detail video feedback!</p>
+  </div>
+</div>
+<div class="banner">
 </div>
