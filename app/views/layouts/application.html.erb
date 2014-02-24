@@ -59,11 +59,12 @@
           <%= flash[:alert] %>
         </div>
       <% end %>
-      <%= yield %>
       <%= javascript_include_tag "application" %>
     </div>
   </div>
 </div>
+
+<%= yield %>
 
 <div id="footer">
   <div class="container">

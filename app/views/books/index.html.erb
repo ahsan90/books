@@ -1,74 +1,75 @@
-<div class="well">
-  <p class="lead">Exam Success provides you with learning materials developed by those verified to have scored in the top 5% in their exam </p>
+<div class="container">
+  <div class="well">
+    <p class="lead">Exam Success provides you with learning materials developed by those verified to have scored in the top 5% in their exam </p>
 
-  <p>We have books, video lectures, notes, sample exam questions and answers and cheat sheets that can be downloaded immediately or emailed to you as a PDF/mp4 video file.</p>
+    <p>We have books, video lectures, notes, sample exam questions and answers and cheat sheets that can be downloaded immediately or emailed to you as a PDF/mp4 video file.</p>
 
-  <p><strong>Just click on the exam on the left menu and a range of titles will come up.</strong></p>
+    <p><strong>Just click on the exam on the left menu and a range of titles will come up.</strong></p>
 
-  <p>The range of items is updated each week so if you can’t find something that you need, let us know on the form below and we’ll see if we can help. Check out our reviews <%= link_to "here", welcome_index_path %>.</p>
+    <p>The range of items is updated each week so if you can’t find something that you need, let us know on the form below and we’ll see if we can help. Check out our reviews <%= link_to "here", welcome_index_path %>.</p>
 
-  <p>We only accept card payments on this site.  If you don't have a card, you can still purchase using other methods of paymet.  Please contact us.</p>
+    <p>We only accept card payments on this site.  If you don't have a card, you can still purchase using other methods of paymet.  Please contact us.</p>
 
-</div>
-<br> </br>
+  </div>
+  <br> </br>
 
 
-<div class="col-md-2">
-  <ul class="nav nav-tabs nav-stacked">
-    <li class="active">
-      <a href="#all" data-toggle="tab">Choose Your Exam</a>
-    </li>
-    <% Category.all.each do |category| %>
-      <li>
-        <a href="#<%= dom_id(category) %>" data-toggle="tab"><%= category.title %></a>
-        <% if can? :edit, Category %>
-          <small>
-            <%= link_to 'edit', edit_category_path(category) %>
-          </small>
-        <% end %>
+  <div class="col-md-2">
+    <ul class="nav nav-tabs nav-stacked">
+      <li class="active">
+        <a href="#all" data-toggle="tab">Choose Your Exam</a>
       </li>
-    <% end %>
-    <% if can? :create, Category %>
-      <li>
-        <%= link_to 'new', new_category_path %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+      <% Category.all.each do |category| %>
+        <li>
+          <a href="#<%= dom_id(category) %>" data-toggle="tab"><%= category.title %></a>
+          <% if can? :edit, Category %>
+            <small>
+              <%= link_to 'edit', edit_category_path(category) %>
+            </small>
+          <% end %>
+        </li>
+      <% end %>
+      <% if can? :create, Category %>
+        <li>
+          <%= link_to 'new', new_category_path %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
-<div class="col-md-10">
-  <div class="tab-content">
-    <div class="tab-pane active" id="all">
-      <%= render Book.all %>
-    </div>
-    <% Category.all.each do |category| %>
-    <div class="tab-pane" id="<%= dom_id(category)%>" >
-      <div class="row">
-        <%= render category.books %>
+  <div class="col-md-10">
+    <div class="tab-content">
+      <div class="tab-pane active" id="all">
+        <%= render Book.all %>
       </div>
+      <% Category.all.each do |category| %>
+      <div class="tab-pane" id="<%= dom_id(category)%>" >
+        <div class="row">
+          <%= render category.books %>
+        </div>
+      </div>
+      <% end %>
     </div>
+  </div>
+
+  <div class="col-md-2">
+  </div>
+
+  <div class="col-md-8">
+    <blockquote>
+      <p><strong>Can't find what you're looking for?</strong> or Have Notes you want to Share/Sell? </p>
+      <p> Get in touch! </p>
+    </blockquote>
+    <form class="form-horizontal" role="form">
+      <%= render partial: 'contacts/contact', locals: {contact: Contact.new} %>
+    </form>
+    <br></br>
+    <% if can? :create, Book %>
+      <%= link_to "Create New Book", new_book_path(Book.new), class: 'btn btn-danger btn-lg' %>
     <% end %>
+    <br></br>
   </div>
 </div>
-
-<div class="col-md-2">
-</div>
-
-<div class="col-md-8">
-  <blockquote>
-    <p><strong>Can't find what you're looking for?</strong> or Have Notes you want to Share/Sell? </p>
-    <p> Get in touch! </p>
-  </blockquote>
-  <form class="form-horizontal" role="form">
-    <%= render partial: 'contacts/contact', locals: {contact: Contact.new} %>
-  </form>
-  <br></br>
-  <% if can? :create, Book %>
-    <%= link_to "Create New Book", new_book_path(Book.new), class: 'btn btn-danger btn-lg' %>
-  <% end %>
-  <br></br>
-</div>
-
 
 
 
