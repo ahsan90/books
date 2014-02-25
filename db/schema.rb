@@ -11,7 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20140215094907) do
 
   create_table "books", :force => true do |t|
@@ -42,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20140215094907) do
     t.integer  "referrer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "referrer"
   end
 
   create_table "referrers", :force => true do |t|

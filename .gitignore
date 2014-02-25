@@ -20,4 +20,7 @@
 # Carrierwave image
 public/uploads
 
+# Ignore seeds file
+/db/*.csv
+
 .DS_Store

@@ -7,21 +7,27 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+require 'csv'
+ 
+rows = CSV.read('db/seedfirst.csv', 'r:ISO-8859-1', headers: true)
+rows.each_with_index do |row, index|
+  puts "Starting row #{index+1}/#{rows.length}"
+  b = Book.where(title: row['title']).first_or_create
+  b.body = row['body']
+  b.atar = row['atar']
+  b.price       = row['price']
+  b.remote_file_url = row['file']
+  b.remote_display_url = row['display']
+  b.remote_preview_url = row['preview']
+  b.category    = Category.where(title: row['category']).first_or_create
+  if b.save
+    puts "Successfully saved #{b.title}"
+  else
+    puts "Error saving #{b.title} (handle manually later)"
+  end
+end
 
-t = Book.new
-t.title = "Year 12 Biology Revision Notes Module 1"
-t.body = "Year 11 -12 HSC Biology students. Students can use this as study material and for revision.  This document contains:
-Crucial Information to Maximise Performance
-Module 1: Maintaining a balance
-Specificity of Enzymatic Function in organisms
-Maintenance of internal conditions especially temperature
-Transportation of nutrients and gases in organisms
-Regulation of gas concentrations, water and waste products of metabolism Regulation of salt levels for estuarine organisms
-This document only contains Module 1, Modules 2 and 3 are in separate documents.
-Created By B.C, ATAR: 99.40 The document contains 9 pages."
-t.atar = 99.4
-t.price = 6.99
-t.remote_file_url = 'https://dl.dropboxusercontent.com/s/4enof3dcnktnct7/1_BJ_20120414_Biology_Notes_Module1.pdf?dl=1&token_hash=AAFupTu_UaTXRzCHgXnA075GfMAA1o3JY8khZCRRMqWLww'
-t.remote_display_url = 'https://dl.dropboxusercontent.com/s/3co70tira6g20d3/Cover1_flatten-001-001.jpg?dl=1&token_hash=AAGIX1VsakXBsfU0lw2pJKsTBuBNgPabCd2EIJ5R8fu9vg'
-t.category = Category.find_by_title('HSC')
-t.save
+#t.remote_file_url = 'https://dl.dropboxusercontent.com/s/4enof3dcnktnct7/1_BJ_20120414_Biology_Notes_Module1.pdf?dl=1&token_hash=AAFupTu_UaTXRzCHgXnA075GfMAA1o3JY8khZCRRMqWLww'
+#t.remote_display_url = 'https://dl.dropboxusercontent.com/s/3co70tira6g20d3/Cover1_flatten-001-001.jpg?dl=1&token_hash=AAGIX1VsakXBsfU0lw2pJKsTBuBNgPabCd2EIJ5R8fu9vg'
+#t.category = Category.find_by_title('HSC')
+#t.save

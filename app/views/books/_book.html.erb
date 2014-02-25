@@ -8,7 +8,7 @@
         <h4 class="modal-title" id="myModalLabel"><%= book.title %></h4>
       </div>
       <div class="modal-body">
-        <%= book.body %>
+        <%= simple_format(book.body) %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -48,8 +48,11 @@
         <%= form_tag book_buy_path(book) do %>
           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-name="Exam Success"
         data-description="<%= book.title %>"
-        data-amount="<%= book.price_in_cents %>"></script>
+        data-amount="<%= book.price_in_cents %>"
+        data-label="Buy Now">
+        </script>
         <p><small></small></p>
         <p class='text-muted'>$ <%= book.price %></p>
         <% end %>
