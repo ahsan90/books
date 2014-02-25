@@ -18,9 +18,11 @@
 /config/application.yml
 
 # Carrierwave image
-public/uploads
+/public/uploads
 
 # Ignore seeds file
 /db/*.csv
+
+
 
 .DS_Store
