@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exam Success</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "welcome", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <%= image_tag("logo.png", size: "130x50", alt: "rss feed") %>
+        <% end %>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Books", books_path %></li>
+          <li><%= link_to "English Writing", welcome_writing_path %></li>
+          <li><%= link_to "Free Stuff", welcome_blog_path %></li>
+          <li><%= link_to "Contact", welcome_contact_path %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+            <p class="navbar-text">Hello</p><li><%= link_to (current_user.name || current_user.email), current_user %></li><p class="navbar-text">!</p>
+            <li><%= link_to edit_user_registration_path, class: 'btn btn-mini' do %>
+                <span class="glyphicon glyphicon-user"></span>
+              <% end %></li>
+            <li><%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-mini' do %>
+            <span class="glyphicon glyphicon-log-out"></span></li>
+            <% end %>
+          <% else %>
+            <li><%= link_to "Sign In", new_user_session_path %></li><p class="navbar-text"> or </p>
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:notice] %>
+      </div>
+    <% elsif flash[:error] %>
+      <div class="alert alert-error">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:error] %>
+      </div>
+    <% elsif flash[:alert] %>
+      <div class="alert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+
+
+<footer>
+  <p class="navbar-text">&copy; Exam Success Pty Ltd 2011 - 2014</p>
+  <ul class="nav navbar-nav navbar-right">
+    <li><%= link_to "Our Tutors & Partners", welcome_tutors_path %></li>
+    <li><%= link_to "About", welcome_about_path %></li>
+    <li><%= link_to "Privacy", welcome_privacy_path %></li>
+    <li><%= link_to "Terms & Conditions", welcome_terms_path %></li>
+</footer>
+</body>
+</html>

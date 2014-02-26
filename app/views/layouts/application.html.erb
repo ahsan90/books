@@ -3,9 +3,6 @@
 <head>
   <title>Exam Success</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <% if params[:controller] == "welcome" && params[:action] == "index"%>
-    <%= stylesheet_link_tag    "welcome", :media => "all" %>
-  <%end%>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
