@@ -4,6 +4,10 @@ body, html {
   background-size:100%;
 }
 
+.navbar {
+  margin-bottom: 0px;
+}
+
 .jumbotron {
   padding-top: 30px;
   background-color: transparent;
@@ -151,8 +155,4 @@ body, h1, h2, h3, h4, h5, h6 {
 footer {
   background-color: transparent;
   padding: 50px 10px;
-}
-
-p.copyright {
-  margin: 15px 0 0;
 }
