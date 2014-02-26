@@ -18,9 +18,9 @@ open(ENV['SEEDING_FILE'], 'r:ISO-8859-1') do |f|
     b.body = row['body']
     b.atar = row['atar']
     b.price       = row['price']
-    #b.remote_file_url = row['file']
-    #b.remote_display_url = row['display']
-    #b.remote_preview_url = row['preview']
+    b.remote_file_url = row['file']
+    b.remote_display_url = row['display']
+    b.remote_preview_url = row['preview']
     b.category    = Category.where(title: row['category']).first_or_create
     if b.save
       puts "Successfully saved #{b.title}"
