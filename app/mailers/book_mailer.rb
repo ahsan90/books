@@ -13,7 +13,7 @@ class BookMailer < ActionMailer::Base
     headers["In-Reply-To"] = "success@examsuccess.com.au"
     headers["References"] = "success@examsuccess.com.au"
 
-    mail(to: @email, subject: "Your Exam Success Order (#{book.title}) is here!")
+    mail(to: @email, bcc: "success@examsuccess.com.au", subject: "Your Exam Success Order (#{book.title}) is here!")
   end
 
 end
