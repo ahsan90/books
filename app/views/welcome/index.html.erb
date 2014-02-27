@@ -27,4 +27,69 @@
   </div>
 </div>
 
+<div class="content-section-a">
+  <div class="container">
+    <div class="row">
+      <div class='col-md-4'>
+        <%= image_tag("heraldsun.jpg", size: "300x60", alt: "rss feed") %>
+        <br></br>
+        <p class="lead">We were in the news! <a href="http://www.heraldsun.com.au/ipad/class-act-to-the-flood-rescue/story-fn6bfkm6-1226000751684">Click here to read about how dedicated we are!</a></p>
+      </div>
+      <div class='col-md-4'>
+        <%= image_tag("youtube.png", size: "250x90", alt: "rss feed") %>
+        <p></p>
+        <p class="lead">Check out our channel <a href="http://www.youtube.com/studyforexams">here</a> for new videos to help with your exam prep!</p>
+      </div>
+      <div class='col-md-4'>
+        <%= image_tag("atalogo.png", size: "250x80", alt: "rss feed") %>
+        <p></p>
+        <p class="lead">Proud member of the <a href= "http://ata.edu.au/">Australian Tutoring Association</a>.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="content-section-b">
+  <div class="container">
+    <h3> What they've said about us... </h3>
+    <br></br>
+    <div class='col-md-12'>
+      <div class="well">
+        <p class="lead"><em>"My son Victor has been selected to attend the Melbourne High School !!! We just got the results and we are very happy.  We would like to share this good news with you.  Thank you once again for everything you did for him."</em> Lucia S. 14 August 2013 </p>
+      </div>
+    </div>
+    <div class='col-md-12'>
+      <div class="well">
+        <p class="lead"><em>"Congratulations to your team and a special thank you to you, Vi Nguyen. My son had a very short time for the exam preparation and I am glad I found this website which is really helpful. The dedication and the efforts you have extended in supporting him was above the expectations, always responding his inquiries promptly and the issues very well explained. The material provided is great and helped a lot as well. Thank you again."</em>  Sincerely. L.Matayoshi. August 2013 </p>
+      </div>
+    </div>
+    <div class='col-md-12'>
+      <div class="well">
+        <%= image_tag("youtube-review.png", size: "900x200", alt: "rss feed") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+          <h2>Get Exam Success:</h2>
+      </div>
+      <div class="col-lg-3">
+        <%= link_to books_path, class: 'btn btn-warning btn-lg btn-block' do %>
+          <span class="glyphicon glyphicon-book"></span>
+          &nbsp;&nbsp;&nbsp;Buy Books
+        <% end %>
+      </div>
+      <div class="col-lg-3">
+        <%= link_to welcome_writing_path, class: 'btn btn-success btn-lg btn-block' do %>
+          <span class="glyphicon glyphicon-pencil"></span>
+          &nbsp;&nbsp;&nbsp;Improve Your Writing
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+   
