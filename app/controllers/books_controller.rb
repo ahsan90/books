@@ -54,7 +54,11 @@ class BooksController < ApplicationController
       flash[:notice] = "#{current_user.name} bought #{@book.title}!"
     else
       @temp_password = Devise.friendly_token.first(12)
-      @user = User.create(email: params[:stripeEmail], password: @temp_password)
+      if User.exists?(email: params[:stripeEmail])
+        @user = User.find_by_email(email: params[:stripeEmail])
+      else
+        @user = User.create(email: params[:stripeEmail], password: @temp_password)
+      end
       flash[:notice] = "An email with your ebook is now on its way to you!"
     end
 
