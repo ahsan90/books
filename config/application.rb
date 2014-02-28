@@ -67,10 +67,10 @@ module Books
     config.assets.initialize_on_precompile = true
   end
 
-  #module Books
-  #  class Application < Rails::Application
-  #   config.force_ssl = true
-  #  end
-  #end
+  module Books
+    class Application < Rails::Application
+     config.force_ssl = true
+    end
+  end
 
 end
