@@ -9,8 +9,7 @@ class ContactsController < ApplicationController
       ContactMailer.new_message(@contact).deliver
       redirect_to :back, :notice => "Message was successfully sent."
     else
-      redirect_to :back, :warning => "Please fill in all fields."
-      render :new
+      redirect_to :back, :notice => "Please fill in all fields."
     end
   end
 
