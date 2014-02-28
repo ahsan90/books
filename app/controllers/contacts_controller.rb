@@ -5,8 +5,13 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(params[:contact])
-    ContactMailer.new_message(@contact).deliver
-    redirect_to :back, :notice => "Message was successfully sent."
+    if @message.valid?
+      ContactMailer.new_message(@contact).deliver
+      redirect_to :back, :notice => "Message was successfully sent."
+    else
+      flash.now.alert = "Please fill all fields."
+      render :new
+    end
   end
 
 end
