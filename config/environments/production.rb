@@ -65,7 +65,6 @@ Books::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  Books::Application.configure do
   config.force_ssl = true
-  end
+
 end
