@@ -126,6 +126,7 @@ GEM
     rake (10.1.1)
     rdoc (3.12.2)
       json (~> 1.4)
+    recaptcha (0.3.6)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     ruby-hmac (0.4.0)
@@ -170,6 +171,7 @@ DEPENDENCIES
   mini_magick
   pg
   rails (= 3.2.13)
+  recaptcha
   sass-rails (~> 3.2.3)
   sqlite3
   stripe!
