@@ -6,6 +6,7 @@
 <div class='form-group'>
   <%= f.label :body, 'Your message:' %>
   <%= f.text_area :body, :id => "message_area", :cols => 8, :rows => 8, class: 'form-control' %>
+  <%= recaptcha_tags %>
 </div>
 <%= f.submit "Contact us", class: 'btn btn-default' %>
 <% end %>
