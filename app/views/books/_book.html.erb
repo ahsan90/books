@@ -1,22 +1,21 @@
 
-<!-- Model code -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><%= book.title %></h4>
-      </div>
-      <div class="modal-body">
-        <%= simple_format(book.body) %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<!-- Model code 
+  <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel"><%= book.title %></h4>
+        </div>
+        <div class="modal-body">
+          <%= simple_format(book.body) %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
-  </div>
-</div>
- 
+  </div>-->
  
 <!-- Thumbnails commence -->
 
@@ -28,8 +27,8 @@
     <div class="caption">
       <h4><%= book.title %></h4>
       <p>Author's Score (ATAR or IELTS): <%= book.atar %></p>
-      <a href="#" data-toggle="modal" data-target="#myModal">
-        Click here for full description...
+      <!--<a href="#" data-toggle="modal" data-target="#myModal">-->
+      <%= link_to "Click here for full description...", book_path(book) %>
       </a>
       <p> or check out the FREE preview....</p>
       <p></p>
