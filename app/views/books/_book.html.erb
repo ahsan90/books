@@ -1,11 +1,30 @@
 
-<!-- Model code -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<%= content_tag :div, html: { class: 'modal fade', id: "book#{book.id}", role: "dialog", tabindex: "-1", aria-labelledby: "myModalLabel", aria-hidden: "true" } do %>
+
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><%= book.title %></h4>
+        <h4 class="modal-title"><%= book.title %></h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_format(book.body) %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+
+<% end %>
+
+<!-- Model code 
+<div class="modal fade" id="book#{book.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"><%= book.title %></h4>
       </div>
       <div class="modal-body">
         <%= simple_format(book.body) %>
@@ -16,7 +35,7 @@
     </div>
   </div>
 </div>
- 
+-->
  
 <!-- Thumbnails commence -->
 
@@ -28,9 +47,9 @@
     <div class="caption">
       <h4><%= book.title %></h4>
       <p>Author's Score (ATAR or IELTS): <%= book.atar %></p>
-      <a href="#" data-toggle="modal" data-target="#myModal">
+      <%= link_to "#", data-toggle: "modal", data-target: "#book#{book.id}" do %>
         Click here for full description...
-      </a>
+      <% end %>
       <p> or check out the FREE preview....</p>
       <p></p>
       <%= link_to book.preview.url, class: "btn btn-default btn-sm" do %>
