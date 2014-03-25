@@ -8,7 +8,7 @@ class Book < ActiveRecord::Base
   mount_uploader :file, FileUploader
   mount_uploader :preview, FileUploader
 
-  default_scope order('books.created_at ASC')
+  default_scope order('books.created_at DESC')
 
   validates :category, presence: true
 
