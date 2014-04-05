@@ -1,0 +1,72 @@
+<div class="row">
+  <%= form_for contact, html: {class: 'form-horizontal', role: 'form'} do |f| %>
+    <div class='form-group'>
+      <%= f.label :studentname, 'Student First Name & Surname:' %>
+      <%= f.text_area :studentname, :id => "message_area", :cols => 1, :rows => 1, class: 'form-control' %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :guardianname, 'Parent or Guardian Name:' %>
+      <%= f.text_area :guardianname, :id => "message_area", :cols => 1, :rows => 1, class: 'form-control' %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :address, 'Address:' %>
+      <%= f.text_area :address, :id => "message_area", :cols => 1, :rows => 1, class: 'form-control' %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :suburb, 'Suburb:' %>
+      <%= f.text_area :suburb, :id => "message_area", :cols => 1, :rows => 1, class: 'form-control' %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :phone, 'Parent’s best contact number (home/business/mobile):' %>
+      <%= f.text_area :phone, :id => "message_area", :cols => 1, :rows => 1, class: 'form-control' %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :emergencyphone, 'Emergency contact person & phone:' %>
+      <%= f.text_area :emergencyphone, :id => "message_area", :cols => 1, :rows => 1, class: 'form-control' %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :email, 'Email:' %>
+      <%= f.email_field :email, autofocus: false, class: 'form-control' %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :schoolgrade, 'Current Grade in School:' %>
+      <%= f.text_area :schoolgrade, :id => "message_area", :cols => 1, :rows => 1, class: 'form-control' %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :gender, 'Male/Female:' %>
+      <%= f.text_area :gender, :id => "message_area", :cols => 1, :rows => 1, class: 'form-control' %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :dob, 'Date of birth:' %>
+      <%= f.text_area :dob, :id => "message_area", :cols => 1, :rows => 1, class: 'form-control' %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :foods, 'Please detail any food that your child should not eat (medical reasons only)' %>
+      <%= f.text_area :foods, :id => "message_area", :cols => 1, :rows => 1, class: 'form-control' %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :medical, 'Please list any medical conditions we should know about:' %>
+      <%= f.text_area :medical, :id => "message_area", :cols => 1, :rows => 1, class: 'form-control' %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :workshop, 'Which workshop do you want to enrol in and where? (e.g. Verbal Reasoning in VIC or General Ability in NSW (please refer to the Information pack for full details):' %>
+      <%= f.text_area :workshop, :id => "message_area", :cols => 1, :rows => 4, class: 'form-control' %>
+    </div>
+
+    <p>By clicking "Enrol Now", I agree that I have read, and acknowledge, these conditions of enrolment below and in the Information Pack.</p>
+  <%= recaptcha_tags %>
+  <p></p>
+  <%= f.submit "Enrol Now", class: 'btn btn-lg btn-primary' %>
+  <% end %>
+  <p></p>
+  <%= simple_format("
+  Terms And Conditions
+  1. We reserve the right to cancel or reschedule any workshop where there are not sufficient bookings.
+  2. If a student cancels or changes for any reason, a refund will be made depending on when the cancellation or change was received. Cancellation charges will be assessed as follows:
+    • 5 or more days prior to workshop: 20% cancellation fee for the total workshop
+    • 2 or less days prior to workshop: 50% cancellation fee for the total workshop
+  3. It is the responsibility of parents/guardians to ensure that staff can contact them easily during all sessions. Please make sure that we have a phone number for you on the day of any session attended.
+  4. It is the responsibility of parents to advise Exam Success of any foods a child should not eat or medical problems.
+  ")%>
+</div>
+

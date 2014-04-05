@@ -6,4 +6,5 @@ class ContactMailer < ActionMailer::Base
     @message = message
     mail(:subject => "New message from Contact form")
   end
+
 end
