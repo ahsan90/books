@@ -11,9 +11,8 @@ Books::Application.routes.draw do
     post :buy, to: 'books#buy'
   end
   resources :categories, except: [:destroy]
-  resources :workshops, except: [:destroy] do
-    post :buy, to: 'workshops#buy'
-  end
+  resources :workshops, except: [:destroy]
+  
 
   get "welcome/about"
   get "welcome/tutors"
