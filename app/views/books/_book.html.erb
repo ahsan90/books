@@ -30,7 +30,6 @@
       <!--<a href="#" data-toggle="modal" data-target="#myModal">-->
       <%= link_to "Click here for full description...", book_path(book) %>
       </a>
-      <p> or check out the FREE preview....</p>
       <p></p>
       <%= link_to book.preview.url, class: "btn btn-default btn-sm" do %>
         Get Free Preview
@@ -47,13 +46,15 @@
         <%= form_tag book_buy_path(book) do %>
           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-        data-name="Exam Success"
+        data-image="<%=image_path "securepayment1.png"%>"
+        data-name="Secure Payment"
         data-description="<%= book.title %>"
         data-amount="<%= book.price_in_cents %>"
         data-label="Download Full eBook"
         </script>
         <p><small></small></p>
         <p class='text-muted'>$ <%= book.price %></p>
+        <p class='text-muted'>Don't have credit card?  Contact us for other options </p>
         <% end %>
       <% end %>
     </div>
