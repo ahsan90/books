@@ -1,23 +1,16 @@
 
-<div class="well">
-  <p class="lead">Exam Success provides you with learning materials developed by those verified to have scored in the top 5% in their exam </p>
-
-  <p>We have books, video lectures, notes, sample exam questions and answers and cheat sheets that can be downloaded immediately or emailed to you as a PDF/mp4 video file.</p>
-
-  <p><strong>Just click on the exam on the left menu and a range of titles will come up.</strong></p>
-
-  <p>The range of items is updated each week so if you can’t find something that you need, let us know on the form below and we’ll see if we can help. Check out our reviews <%= link_to "here", welcome_index_path %>.</p>
-
-  <p>We only accept card payments on this site.  If you don't have a card, you can still purchase using other methods of payment.  Please contact us.</p>
-
+<div class="container">
+  <h2>Get learning materials from A+ students, tutors and teachers </h2>
+  <br> </br>
+  <p>Just click on the exam on the left menu and a range of titles will come up.  Check back for new titles.  See reviews <%= link_to "here", welcome_index_path %>.</p>
 </div>
-<br> </br>
+
 
 
 <div class="col-md-2">
   <ul class="nav nav-tabs nav-stacked">
     <li class="active">
-      <a href="#all" data-toggle="tab">Choose Your Exam</a>
+      <a href="#all" data-toggle="tab">All Exams</a>
     </li>
     <% Category.all.each do |category| %>
       <li>
