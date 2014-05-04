@@ -7,6 +7,7 @@ CarrierWave.configure do |config|
   } 
   config.fog_directory  = ENV['AWS_BUCKET']
   config.fog_public     = false 
+  config.fog_authenticated_url_expiration = 259200
 end 
 
 # Ref:

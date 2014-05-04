@@ -1,6 +1,6 @@
+<!--
 
-<!-- Model code 
-  <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="<%= dom_id(book) %>-show" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-  </div>-->
+  </div>
  
 <!-- Thumbnails commence -->
 
@@ -29,6 +29,7 @@
       <p>Author's Score (ATAR or IELTS): <%= book.atar %></p>
       <!--<a href="#" data-toggle="modal" data-target="#myModal">-->
       <%= link_to "Click here for full description...", book_path(book) %>
+      <%#= link_to "Click here for full description...", "#", data: {toggle: 'modal', target: "#{dom_id(book)}-show"} %>
       </a>
       <p></p>
       <%= link_to book.preview.url, class: "btn btn-default btn-sm" do %>

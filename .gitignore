@@ -23,6 +23,12 @@
 # Ignore seeds file
 /db/*.csv
 
+# Ignore ssl certs
+/server.csr
+/server.key
+/server.pass.key
+/ssl.crt
+/intermediate.crt
 
 
 .DS_Store

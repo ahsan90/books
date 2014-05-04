@@ -38,6 +38,9 @@
     <% Category.all.each do |category| %>
     <div class="tab-pane" id="<%= dom_id(category)%>" >
       <div class="row">
+        <%= render category %>
+      </div>
+      <div class="row">
         <%= render category.books %>
       </div>
     </div>
