@@ -29,6 +29,7 @@
 /server.pass.key
 /ssl.crt
 /intermediate.crt
+/server.crt
 
 
 .DS_Store
