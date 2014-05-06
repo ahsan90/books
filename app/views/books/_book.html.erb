@@ -16,6 +16,7 @@
       </div>
     </div>
   </div>
+-->
  
 <!-- Thumbnails commence -->
 
@@ -45,18 +46,17 @@
         <!-- book.file.url -->
       <% else %>
         <%= form_tag book_buy_path(book) do %>
-          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-        data-image="<%=image_path "securepayment1.png"%>"
-        data-name="Secure Payment"
-        data-description="<%= book.title %>"
-        data-amount="<%= book.price_in_cents %>"
-        data-label="Download Full eBook">
-        </script>
+          <%= submit_tag 'Download Full eBook', id: dom_id(book), class: 'btn btn-success stripe-checkout', data: {
+            key:          Rails.configuration.stripe[:publishable_key],
+            image:        image_path('securepayment1.png'),
+            name:         'Secure Payment',
+            description:  book.title,
+            amount:       book.price_in_cents,
+          } %>
+        <% end %>
         <p><small></small></p>
         <p class='text-muted'>$ <%= book.price %></p>
         <p class='text-muted'>Don't have credit card?  Contact us for other options </p>
-        <% end %>
       <% end %>
     </div>
   </div>

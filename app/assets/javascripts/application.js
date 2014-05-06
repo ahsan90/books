@@ -17,3 +17,17 @@
 
 
 $('.dropdown-toggle').dropdown()
+
+$(function(){
+  $('.stripe-checkout').click(function(e){
+    var $form = $(this).closest('form')
+    StripeCheckout.configure({token: function(token){
+      $form.append($('<input>').attr({
+        type: 'hidden',
+        name: 'stripeToken',
+        value: token.id
+      })).submit()
+    }}).open($(this).data())
+    e.preventDefault()
+  })
+})
