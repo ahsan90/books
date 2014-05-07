@@ -46,12 +46,13 @@
         <!-- book.file.url -->
       <% else %>
         <%= form_tag book_buy_path(book) do %>
-          <%= submit_tag 'Download Full eBook', id: dom_id(book), class: 'btn btn-success stripe-checkout', data: {
+          <%= submit_tag 'Download Full eBook', id: dom_id(book), class: 'btn btn-warning stripe-checkout', data: {
             key:          Rails.configuration.stripe[:publishable_key],
             image:        image_path('securepayment1.png'),
             name:         'Secure Payment',
             description:  book.title,
             amount:       book.price_in_cents,
+            currency:     'aud',
           } %>
         <% end %>
         <p><small></small></p>
