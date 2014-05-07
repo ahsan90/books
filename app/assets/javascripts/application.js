@@ -26,6 +26,10 @@ $(function(){
         type: 'hidden',
         name: 'stripeToken',
         value: token.id
+      })).append($('<input>').attr({
+        type: 'hidden',
+        name: 'stripeEmail',
+        value: token.email
       })).submit()
     }}).open($(this).data())
     e.preventDefault()
