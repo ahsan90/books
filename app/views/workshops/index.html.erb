@@ -18,14 +18,21 @@
 
     <div class="col-md-6">
       <div class="well">
-        <h3> 2014 Victorian Selective School Exam Workshop - Verbal Reasoning </h3>
-        <h4> Hurry Book Now only 24 spots left! 1 Workshop available on 25/5/14.  Includes 60 practice questions, English writing correction and more! 
+        <h3> 2014 Victorian Selective School Exam Workshop - Verbal Reasoning THIS SUNDAY 25/5/2014 </h3>
+        <h4><%=simple_format("Last Minute 10 spots left! 
+
+          Sale Price $150 (Discount of $120).
+
+          To enrol, fill in the form on this page.
+
+        BONUS! Includes 60 Verbal Reasoning practice questions, 50 Numerical Reasoning practice questions and an English writing correction video!")%>
         </h4>
-        <p class="lead">Click <a href="http://goo.gl/LRCo9f">here to download</a> the information pack</u> (if you are going to be in Year 9 in 2015).</p>
+        <p class="lead">Click <a href="http://goo.gl/LRCo9f">here to download</a> the information pack</u> (if you are going to be in Year 9 or 10 in 2015).</p>
         <iframe width="500" height="280" src="//www.youtube.com/embed/ZqrA7g3t6lc" frameborder="0" allowfullscreen></iframe>
-        <h4> Enrol online here or at Academic Solutionz Bookstore, 54 Station Pl, Sunshine VIC 3020</h4>
+        <h4> Enrol here or at Academic Solutionz Bookstore, 54 Station Pl, Sunshine VIC 3020</h4>
       </div>
     </div>
+<!--
     <div class="col-md-6">
       <div class="well">
         <h3> 2014 NSW Selective HSP Test Workshops </h3>
@@ -35,17 +42,19 @@
   </div>
   <div class="row">
     <h3>NSW September 2014 Workshops Timetable </h3>
-    <%= image_tag("timetable_workshops_selective_test.png", size: "1100x370", alt: "rss feed") %>
+    <%#= image_tag("timetable_workshops_selective_test.png", size: "1100x370", alt: "rss feed") %>
   
 
-      <!--<div class="well">
-        <p class="lead">Click <a href="#">here</a> for <u><strong>NSW</strong> Year 7 Workshops</u> (if you are going to be in Year 6 in 2015) full information pack.</p>
+-->
+    <div class="col-md-6">
+      <h3>Enrol in a Workshop Now! </h3>
+      <br></br>
+      
+      <div="container">
+        <%= render partial: 'contacts/workshopenrol', locals: {contact: Contact.new} %>
       </div>
+    </div>
 
-      <div class="well">
-        <p class="lead">Click <a href="#">here</a> for <u><strong>VICTORIAN</strong> Year 9 Workshops</u> (if you are going to be in Year 8 in 2015) full information pack.</p>
-      </div>
-    -->
 
     <div class="col-md-6">
       <h3>Why Choose Exam Success for Workshops?</h3>
@@ -80,13 +89,5 @@
 
     </div>
 
-    <div class="col-md-6">
-      <h3>Enrol in a Workshop Now! Limited Spaces Only! </h3>
-      <br></br>
-      
-      <div="container">
-        <%= render partial: 'contacts/workshopenrol', locals: {contact: Contact.new} %>
-      </div>
-    </div>
   </div>
 </div>
