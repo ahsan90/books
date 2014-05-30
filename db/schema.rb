@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140215094907) do
+ActiveRecord::Schema.define(:version => 20140527112757) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(:version => 20140215094907) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "lessons", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.float    "cost"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "purchases", :force => true do |t|
     t.integer  "user_id"
     t.integer  "book_id"
@@ -42,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20140215094907) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "referrer"
+    t.integer  "lesson_id"
   end
 
   create_table "referrers", :force => true do |t|
@@ -75,5 +84,17 @@ ActiveRecord::Schema.define(:version => 20140215094907) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "workshops", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.float    "atar"
+    t.float    "price"
+    t.string   "file"
+    t.string   "preview"
+    t.string   "display"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end
