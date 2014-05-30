@@ -40,6 +40,7 @@ gem 'fog'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'newrelic_rpm'
+gem "friendly_id", "~> 4.0.10"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

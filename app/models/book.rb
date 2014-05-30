@@ -1,4 +1,6 @@
 class Book < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: :slugged 
   belongs_to :category
   # has_and_belongs_to_many :users
   has_many :purchases
