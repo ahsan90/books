@@ -1,5 +1,9 @@
-class CreateWorkshops < ActiveRecord::Migration
-  def change
+class DropWorkshops < ActiveRecord::Migration
+  def up
+    drop_table :workshops
+  end
+
+  def down
     create_table :workshops do |t|
       t.string :title
       t.text :body

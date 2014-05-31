@@ -1,0 +1,54 @@
+<div class="row text-center">
+  <h2><%= @lesson.title %></h2><br/>
+  <p><%= form_tag lesson_buy_path(@lesson) do %>
+    <%= submit_tag 'Enrol Now', id: dom_id(@lesson), class: 'btn btn-lg btn-danger stripe-checkout', data: {
+      key:          Rails.configuration.stripe[:publishable_key],
+      image:        image_path('securepayment1.png'),
+      name:         'Secure Payment',
+      description:  @lesson.title,
+      amount:       @lesson.cost_in_cents,
+      currency:     'aud',
+      'billing-address' => true
+    } %>
+  <% end %></p> 
+  <p>or go <%= link_to "Back", lessons_path(@lesson) %></p>
+</div>
+<br/>
+<div class="row">
+  <div class="col-md-6">
+    <h4>Class Information</h4>
+    <%= simple_format(@lesson.body) %>
+    <p>For Online classes, check if your device/computer will work for our online classes <a href="http://www.wiziq.com/info/technical-requirement.aspx">here.</a>  If you need help with this, just contact us!</p>
+  </div>
+  <div class="col-md-6">
+    <br/>
+    <p class="lead">More information? Check out this video</p>
+    <iframe width="560" height="315" src=<%= @lesson.video%> frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+<h3>Why Choose Exam Success for Workshops?</h3>
+<%= simple_format("
+
+  Since 2010 we have helped students get into their preferred school. In our first year, we boasted an 80% success rate!
+    
+    This is because:
+
+  • We are high achievers. Exam Success is founded by a previous selective school student (Mac.Robertson Girls’ High School) and a scholarship holder at the prestigious University of Melbourne. Everyone who works for us has an ATAR of 95+ and/or has been offered a spot in a selective school or for a scholarship. While we don’t have a teaching degree, we’re all high achievers who love to share our knowledge. We prefer it that way, as the entry ATAR to become a teacher is only around 70.
+
+  • We specialise in logic and reasoning. The exam is about critical thinking and applying reasoning. The founder studied logic and reasoning as part of her university degree and has taught numerous students how to apply special tools to work out questions quickly. Is your teacher a critical thinking specialist with a 95+ ATAR?
+
+  • We talk your child’s language. At Exam Success we make things as simple as possible. That’s because we don’t like complication. Everything is conveyed in simple to understand language so that your child understands it.")%>
+
+<p><%= form_tag lesson_buy_path(@lesson) do %>
+  <%= submit_tag 'Enrol Now', id: dom_id(@lesson), class: 'btn btn-lg btn-danger stripe-checkout', data: {
+    key:          Rails.configuration.stripe[:publishable_key],
+    image:        image_path('securepayment1.png'),
+    name:         'Secure Payment',
+    description:  @lesson.title,
+    amount:       @lesson.cost_in_cents,
+    currency:     'aud',
+    'billing-address' => true
+  } %>
+<% end %></p> 
+<p>or go <%= link_to "Back", lessons_path(@lesson) %></p>

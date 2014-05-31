@@ -1,9 +1,9 @@
 Books::Application.routes.draw do 
 
-
   devise_for :users
 #match 'contact' => 'contact#new', :as => 'contact', :via => :get
 #match 'contact' => 'contact#create', :as => 'contact', :via => :post
+
   resources :purchases
   resources :contacts, only: [:create, :new]
   resources :users, only: [:show, :index]
@@ -11,6 +11,9 @@ Books::Application.routes.draw do
     post :buy, to: 'books#buy'
   end
   resources :categories, except: [:destroy]
+  resources :lessons, except: [:destroy] do
+    post :buy, to: 'lessons#buy'
+  end
   resources :workshops, except: [:destroy] do
     post :buy, to: 'workshops#buy'
   end

@@ -1,0 +1,46 @@
+<!--div class="col-sm-6 col-md-4"-->
+<div class=col-md-12>
+  <div class="thumbnail">
+    <div class="caption">
+      <div class="row">
+        <div class="col-md-8">
+          <h3><%= lesson.title %></h3>
+          <p class="lead"><%= lesson.frequency %> on <%= lesson.days %> (<%= lesson.channel %>)</p>
+        </div>
+        <div class="col-md-4">
+          <p><%= form_tag lesson_buy_path(lesson) do %>
+            <%= submit_tag 'Enrol Now', id: dom_id(lesson), class: 'btn btn-lg btn-danger stripe-checkout', data: {
+              key:          Rails.configuration.stripe[:publishable_key],
+              image:        image_path('securepayment1.png'),
+              name:         'Secure Payment',
+              description:  lesson.title,
+              amount:       lesson.cost_in_cents,
+              currency:     'aud',
+              'billing-address' => true
+            } %>
+          <% end %><p/>
+          <p class='text-muted'>Class/Program price $ <%= lesson.cost %>  No credit card?  Call us for other ways to pay</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Watch the video below for more info</h4>
+          <iframe width="350" height="197" src=<%= lesson.video%> frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="col-md-4">
+          <h4>About the Classes</h4>
+          <p><%= lesson.body.truncate(400) %></p>
+          <%= link_to "Click here for more details...", lesson_path(lesson) %><p/>
+        </div>
+        <div class="col-md-4">
+          <h4>Class/Program Details</h4>
+          <p><%= lesson.duration %> with different class <%= lesson.frequency %>.  First class starts week beginning <strong><%= lesson.startdate %></strong></p>
+          <p>Class duration: <%= lesson.minutes %> minutes each class.</p>
+          <p>Class days and times: <%= lesson.days %></p>
+          You have options and choose one class <%= lesson.frequency %> on the day which suits your needs.  E.g. Tue/Wed/Thur have the same classes on that particular week, you can choose to go on Tues one week and Wed the next and not miss out.<p/>
+          <p> All classes are recorded </p>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+
