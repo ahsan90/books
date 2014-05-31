@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140531082324) do
+ActiveRecord::Schema.define(:version => 20140531114012) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
@@ -50,6 +50,9 @@ ActiveRecord::Schema.define(:version => 20140531082324) do
     t.float    "minutes"
     t.string   "days"
     t.string   "frequency"
+    t.string   "video"
+    t.string   "startdate"
+    t.string   "channel"
   end
 
   create_table "purchases", :force => true do |t|

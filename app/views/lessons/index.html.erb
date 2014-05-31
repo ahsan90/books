@@ -1,8 +1,14 @@
-<h3>Classes and Programs for English exams, Selective schools and scholarship preparation</h3>
+<div class="row text-center">
+  <h2>Easy to understand classes online and face-to-face with A+ tutors</h2>
+  <p class="lead">For English exams, Selective Schools and Scholarship Preparations with Individual Feedback</p>
+  <iframe width="560" height="315" src="//www.youtube.com/embed/Wh2XIr4bGEk?list=UUBVHBg-oCQ7Gx7yOWuck0IA" frameborder="0" allowfullscreen></iframe>
+</div>
 <br/>
 <div class="row">
+  <h3> Upcoming Classes... </h3>
   <%= render Lesson.all %>
 </div>
+
 
 
 <p><strong>Want to request a class? Or have other questions?</strong></p>
@@ -13,3 +19,4 @@
 <% if can? :create, Lesson %>
   <%= link_to "Create New Lesson", new_lesson_path(Lesson.new), class: 'btn btn-danger btn-lg' %>
 <% end %>
+

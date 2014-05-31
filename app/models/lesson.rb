@@ -1,5 +1,5 @@
 class Lesson < ActiveRecord::Base
-  attr_accessible :body, :cost, :title
+  attr_accessible :body, :cost, :title, :duration, :minutes, :days, :frequency, :video, :startdate, :channel
   has_many :purchases
   has_many :users, through: :purchases
 
