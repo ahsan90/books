@@ -1,27 +1,11 @@
-
-<% Lesson.all.each do |lesson| %>
-  <%= lesson.title %>
-  <%= lesson.body.truncate(100) %>
-  <%= link_to "Click here for full description...", lesson_path(lesson) %>
-  <%#= link_to lesson.infopack.url, class: "btn btn-default btn-sm" do %>
-    <!--Download Information Pack-->
-  <%# end %>
-  <%= form_tag lesson_buy_path(lesson) do %>
-    <%= submit_tag 'Enrol into Class', id: dom_id(lesson), class: 'btn btn-success stripe-checkout', data: {
-      key:          Rails.configuration.stripe[:publishable_key],
-      image:        image_path('securepayment1.png'),
-      name:         'Secure Payment',
-      description:  lesson.title,
-      amount:       lesson.cost_in_cents,
-      currency:     'aud',
-      'billing-address' => true
-    } %>
-  <% end %>
-<% end %>
+<h3>Classes and Programs for English exams, Selective schools and scholarship preparation</h3>
+<br/>
+<div class="row">
+  <%= render Lesson.all %>
+</div>
 
 
-
-<p><strong>Want to request a class?</strong></p>
+<p><strong>Want to request a class? Or have other questions?</strong></p>
   <p> Get in touch! </p>
 </blockquote>
   <%= render partial: 'contacts/contact', locals: {contact: Contact.new} %>

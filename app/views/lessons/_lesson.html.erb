@@ -1,0 +1,29 @@
+<!--div class="col-sm-6 col-md-4"-->
+<div class=col-md-12>
+  <div class="thumbnail">
+    <div class="caption">
+      <h3><%= lesson.title %></h3>
+      <p><%= lesson.body.truncate(100) %></p>
+      <%= link_to "Click here for full description...", lesson_path(lesson) %> or watch the video below.
+      <%= image_tag 'http://placehold.it/250x188' %>
+      <%#= link_to lesson.infopack.url, class: "btn btn-default btn-sm" do %>
+        <!--Download Information Pack-->
+      <%# end %>
+      <p><%= form_tag lesson_buy_path(lesson) do %>
+        <%= submit_tag 'Enrol Now', id: dom_id(lesson), class: 'btn btn-lg btn-success stripe-checkout', data: {
+          key:          Rails.configuration.stripe[:publishable_key],
+          image:        image_path('securepayment1.png'),
+          name:         'Secure Payment',
+          description:  lesson.title,
+          amount:       lesson.cost_in_cents,
+          currency:     'aud',
+          'billing-address' => true
+        } %>
+      <% end %><p/>
+      <p class='text-muted'>Class/Program price $ <%= lesson.cost %></p>
+      <p class='text-muted'>Don't have credit card?  Contact us for other options</p>
+    </div> 
+  </div>
+</div>
+
+
