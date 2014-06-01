@@ -3,7 +3,7 @@ class Lesson < ActiveRecord::Base
   has_many :purchases
   has_many :users, through: :purchases
 
-  default_scope order('lessons.created_at DESC')
+  default_scope order('lessons.created_at ASC')
 
   def cost_in_cents
     self.cost * 100
