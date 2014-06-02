@@ -18,7 +18,11 @@
               currency:     'aud',
               'billing-address' => true
             } %>
-          <% end %><p/>
+          <% end %><% if can? :edit, Category %>
+          <small>
+            <%= link_to 'edit', edit_lesson_path(lesson) %>
+          </small>
+        <% end %><p/>
           <p class='text-muted'>Class/Program price $ <%= lesson.cost %>  No credit card?  Call us for other ways to pay</p>
         </div>
         <div class="col-md-4">

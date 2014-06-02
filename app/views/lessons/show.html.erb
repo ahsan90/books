@@ -26,10 +26,17 @@
     <br/>
     <p class="lead">More information? Check out this video</p>
     <iframe width="560" height="315" src=<%= @lesson.video%> frameborder="0" allowfullscreen></iframe>
+
+    <h4>Class/Program Details</h4>
+    <p><%= @lesson.duration %> with different class <%= @lesson.frequency %>.  First class starts week beginning <strong><%= @lesson.startdate %></strong></p>
+    <p>Class duration: <%= @lesson.minutes %> minutes each class.</p>
+    <p>Class days and times: <%= @lesson.days %></p>
+    You have options and choose one class <%= @lesson.frequency %> on the day which suits your needs.  E.g. Tue/Wed/Thur have the same classes on that particular week, you can choose to go on Tues one week and Wed the next and not miss out.<p/>
+    <p> All classes are recorded </p>
   </div>
 </div>
 
-<h3>Why Choose Exam Success for Workshops?</h3>
+<h3>Why Choose Exam Success?</h3>
 <%= simple_format("
 
   Since 2010 we have helped students get into their preferred school. In our first year, we boasted an 80% success rate!
