@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140531114012) do
+ActiveRecord::Schema.define(:version => 20140602003809) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
@@ -53,7 +53,10 @@ ActiveRecord::Schema.define(:version => 20140531114012) do
     t.string   "video"
     t.string   "startdate"
     t.string   "channel"
+    t.string   "slug"
   end
+
+  add_index "lessons", ["slug"], :name => "index_lessons_on_slug", :unique => true
 
   create_table "purchases", :force => true do |t|
     t.integer  "user_id"

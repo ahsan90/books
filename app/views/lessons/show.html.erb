@@ -1,5 +1,6 @@
 <div class="row text-center">
   <h2><%= @lesson.title %></h2><br/>
+
   <p><%= form_tag lesson_buy_path(@lesson) do %>
     <%= submit_tag 'Enrol Now', id: dom_id(@lesson), class: 'btn btn-lg btn-danger stripe-checkout', data: {
       key:          Rails.configuration.stripe[:publishable_key],
@@ -11,7 +12,8 @@
       'billing-address' => true
     } %>
   <% end %></p> 
-  <p>or go <%= link_to "Back", lessons_path(@lesson) %></p>
+    <p class='text-muted'>Class/Program price $ <%= @lesson.cost %>  No credit card?  Call us for other ways to pay</p>
+    <p>or go <%= link_to "Back", lessons_path(@lesson) %></p>
 </div>
 <br/>
 <div class="row">
