@@ -8,6 +8,6 @@ class Lesson < ActiveRecord::Base
   default_scope order('lessons.created_at ASC')
 
   def cost_in_cents
-    self.cost * 100
+    (self.cost * 100).to_i
   end
 end

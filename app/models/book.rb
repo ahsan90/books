@@ -15,7 +15,7 @@ class Book < ActiveRecord::Base
   validates :category, presence: true
 
   def price_in_cents
-    self.price * 100
+    (self.price * 100).to_i
   end
   
 end
