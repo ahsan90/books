@@ -1,27 +1,63 @@
 <div class="intro-header">
   <div class="container">
     <div class="jumbotron">
-    <h1>Ace Your Exams!</h1>
-    <h2> Got a selective/scholarship test or VCE, HSC or IELTS exam?</h2>
-    <p> Get free and paid book downloads written by top 5% scorers.  Practice your writing too.  New practice questions up each week :-)</p>
-    <p>&nbsp</p>
-      <div class="row">
-        <div class="col-md-2">
+      <h1>Get Into Your </br>Dream School or Job!</h1>
+      <h2> Books and Courses by Experts for Better Exam Prep<h2>
+      <p class="lead"> For Selective School & Scholarship Entrance Exams, Police, PSO & Recruitment Exams and Defence Recruitment Exams!</p>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-4">
+        <%= link_to books_path, class: 'btn btn-warning btn-lg btn-block' do %>
+          <span class="glyphicon glyphicon-book"></span>
+            &nbsp;&nbsp;&nbsp;Buy Books
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <%= link_to lessons_path, class: 'btn btn-danger btn-lg btn-block' do %>
+          <span class="glyphicon glyphicon-pencil"></span>
+            &nbsp;&nbsp;&nbsp;Classes
+        <% end %>
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="content-section-a">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-5 col-sm-6">
+            <hr class="section-heading-spacer">
+            <div class="clearfix"></div>
+            <h2 class="section-heading">We were on the Herald Sun!</h2>
+            <p class="lead">A record 3206 students applied for 941 spots open at the four top schools - Exam Success founder Vi says you need exam strategy <a target="_blank" href="http://www.heraldsun.com.au/news/victoria/struggle-to-make-it-into-top-high-schools-now-tougher-than-ever/story-fni0fit3-1226923327810">View the article here</a>.</p>
         </div>
-        <div class="col-md-4">
-          <%= link_to books_path, class: 'btn btn-warning btn-lg btn-block' do %>
-            <span class="glyphicon glyphicon-book"></span>
-              &nbsp;&nbsp;&nbsp;Buy Books
-          <% end %>
+        <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+          <%= image_tag("heraldsun-selectiveschools-examsuccess.png", size: "400x380", alt: "rss feed") %>
         </div>
-        <div class="col-md-4">
-          <%= link_to lessons_path, class: 'btn btn-danger btn-lg btn-block' do %>
-            <span class="glyphicon glyphicon-pencil"></span>
-              &nbsp;&nbsp;&nbsp;Classes
-          <% end %>
-        </div>
-        <div class="col-md-2">
-        </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.content-section-a -->
+
+<div class="content-section-b">
+  <div class="container">
+    <div class="row">
+      <div class="row text-center">
+        <h2 class="section-heading">How other's have aced their exams with Exam Success...</h2>
+      </div>
+      <hr class="section-heading-spacer">
+      <div class="clearfix"></div>
+      <div class='col-md-6'>
+        <div class="g-post" data-href="https://plus.google.com/105657968689653402381/posts/Xr4xJwqsrwi"></div>
+      </div>
+      <div class='col-md-6'>
+        <div class="g-post" data-href="https://plus.google.com/105657968689653402381/posts/Y5is1FQ37S6"></div>
       </div>
     </div>
   </div>
@@ -29,32 +65,16 @@
 
 <div class="content-section-a">
   <div class="container">
-  <p class="lead"> What they've said about us... </p>
-  <div class='col-md-6'>
-    <div class="g-post" data-href="https://plus.google.com/105657968689653402381/posts/Xr4xJwqsrwi"></div>
-  </div>
-  <div class='col-md-6'>
-    <div class="g-post" data-href="https://plus.google.com/105657968689653402381/posts/Y5is1FQ37S6"></div>
-  </div>
-</div>
-
-<div class="content-section-b">
-  <div class="container">
     <div class="row">
-      <div class='col-md-4'>
-        <%= image_tag("heraldsun.jpg", size: "200x40", alt: "rss feed") %>
-        <br></br>
-        <p class="lead">We were in the news! <a href="http://www.heraldsun.com.au/ipad/class-act-to-the-flood-rescue/story-fn6bfkm6-1226000751684">Click here to read about how dedicated we are!</a></p>
+      <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+          <hr class="section-heading-spacer">
+          <div class="clearfix"></div>
+          <h2 class="section-heading">Check Us Out on Youtube</h2>
+          <p class="lead">Go to our Youtube Channel <a target="_blank" href="http://www.youtube.com/studyforexam">here </a>& subscribe to get updates on new free videos! We're also proud members of the Australian Tutoring Association.</p>
       </div>
-      <div class='col-md-4'>
-        <%= image_tag("youtube.png", size: "170x70", alt: "rss feed") %>
-        <p></p>
-        <p class="lead">Check out our channel <a href="http://www.youtube.com/studyforexams">here</a> for new videos to help with your exam prep!</p>
-      </div>
-      <div class='col-md-4'>
-        <%= image_tag("atalogo.png", size: "210x70", alt: "rss feed") %>
-        <p></p>
-        <p class="lead">Proud member of the <a href= "http://ata.edu.au/">Australian Tutoring Association</a>.</p>
+      <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+          <%= image_tag("youtube.png", size: "170x70", alt: "rss feed") %>
+          <%= image_tag("atalogo.png", size: "210x70", alt: "rss feed") %>
       </div>
     </div>
   </div>
